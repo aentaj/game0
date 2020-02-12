@@ -1,6 +1,8 @@
 Game0 => Solar PV Dev.
 11022020
 
+Edit 0.01
+
 This is a tile based game which is built on Solar PV development.
 The main goal of this game is to enable MMO players to gradually develop Solar PV Plants which would feed various structures.
 The Solar PV Plants are fed again by the output of various structures in the form of more advanced materials, management and R&D.
@@ -8,8 +10,23 @@ The chain of development of Solar PV plants and other structures is designed in 
 Non-linear games usually give players more fun and experience.
 
 The Non-linear structure is basically designed as follows:
+1- Basic Resources
+2- Basic Structures
+3- Various combinations of development trends give various combinations of results.
+4- Tinkering with the combination of priorities should give the players fun time in building their strategy.
+5- The basic output of competition between players can be gauged by a number of outputs from these facilities.
+
+End...
+
+===
+
+In more detail the above steps are described below:
 1- Players start with a certain amount of resources and HQ.
 2- Resources are basically used to build basic resource structures such as: Farms, Training Facilities, (Silicon Aluminum Iron and Dopant refineries)
-3- These 3 basic facilities are then used to improve each other in a certain fun pattern which can be elastic, meaning different priorities result in different outputs and development chain.
-    For example, once Training Facilities are developed faster, a more (refined Solar PV design is achieved). While when Resources are developed earlier, a (refined Solar PV material are achieved).
-4- 
+3- These 3 basic facilities are then used to improve each other in a certain fun pattern which can be elastic, meaning different priorities result in different outputs and development chains.
+4- For example, once Training Facilities are developed faster, a more (refined Solar PV design is achieved). While when Resources are developed earlier, a (refined Solar PV material are achieved).
+5- Various outputs such as Total Solar Power output and effeciency can be gauged in general to rank players.
+Since the game is based on Solar PV development, the output might be best done by tracing the quality of players' outputs to Solar PV quality.
+Some players might arrive later than others, so it might be best to record score based on both players' historic arrivals and potential.
+
+===
