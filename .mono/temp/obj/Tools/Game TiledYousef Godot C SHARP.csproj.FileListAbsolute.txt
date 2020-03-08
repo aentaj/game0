@@ -1,0 +1,15 @@
+/home/ariel/Escritorio/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Tools/Game TiledYousef Godot C SHARP.csprojAssemblyReference.cache
+/home/ariel/Escritorio/Game TiledYousef Godot VERSION CSHARP/.mono/temp/bin/Tools/Game TiledYousef Godot C SHARP.dll
+/home/ariel/Escritorio/Game TiledYousef Godot VERSION CSHARP/.mono/temp/bin/Tools/Game TiledYousef Godot C SHARP.pdb
+/home/ariel/Escritorio/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Tools/Game TiledYousef Godot C SHARP.dll
+/home/ariel/Escritorio/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Tools/Game TiledYousef Godot C SHARP.pdb
+/home/ariel/Documentos/Godot engine proyectos/Game TiledYousef Godot VERSION CSHARP/.mono/temp/bin/Tools/Game TiledYousef Godot C SHARP.dll
+/home/ariel/Documentos/Godot engine proyectos/Game TiledYousef Godot VERSION CSHARP/.mono/temp/bin/Tools/Game TiledYousef Godot C SHARP.pdb
+/home/ariel/Documentos/Godot engine proyectos/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Tools/Game TiledYousef Godot C SHARP.csprojAssemblyReference.cache
+/home/ariel/Documentos/Godot engine proyectos/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Tools/Game TiledYousef Godot C SHARP.dll
+/home/ariel/Documentos/Godot engine proyectos/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Tools/Game TiledYousef Godot C SHARP.pdb
+/home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Game TiledYousef Godot VERSION CSHARP/.mono/temp/bin/Tools/Game TiledYousef Godot C SHARP.dll
+/home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Game TiledYousef Godot VERSION CSHARP/.mono/temp/bin/Tools/Game TiledYousef Godot C SHARP.pdb
+/home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Tools/Game TiledYousef Godot C SHARP.csprojAssemblyReference.cache
+/home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Tools/Game TiledYousef Godot C SHARP.dll
+/home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Tools/Game TiledYousef Godot C SHARP.pdb

@@ -1,0 +1,10 @@
+/home/ariel/Documentos/Godot engine proyectos/Game TiledYousef Godot VERSION CSHARP/.mono/temp/bin/Debug/Game TiledYousef Godot C SHARP.dll
+/home/ariel/Documentos/Godot engine proyectos/Game TiledYousef Godot VERSION CSHARP/.mono/temp/bin/Debug/Game TiledYousef Godot C SHARP.pdb
+/home/ariel/Documentos/Godot engine proyectos/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Debug/Game TiledYousef Godot C SHARP.csprojAssemblyReference.cache
+/home/ariel/Documentos/Godot engine proyectos/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Debug/Game TiledYousef Godot C SHARP.dll
+/home/ariel/Documentos/Godot engine proyectos/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Debug/Game TiledYousef Godot C SHARP.pdb
+/home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Game TiledYousef Godot VERSION CSHARP/.mono/temp/bin/Debug/Game TiledYousef Godot C SHARP.dll
+/home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Game TiledYousef Godot VERSION CSHARP/.mono/temp/bin/Debug/Game TiledYousef Godot C SHARP.pdb
+/home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Debug/Game TiledYousef Godot C SHARP.csprojAssemblyReference.cache
+/home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Debug/Game TiledYousef Godot C SHARP.dll
+/home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Debug/Game TiledYousef Godot C SHARP.pdb
