@@ -1,0 +1,10 @@
+/home/ariel/Documentos/Godot engine proyectos/Game TiledYousef Godot/.mono/temp/bin/Tools/Game TiledYousef Godot.dll
+/home/ariel/Documentos/Godot engine proyectos/Game TiledYousef Godot/.mono/temp/bin/Tools/Game TiledYousef Godot.pdb
+/home/ariel/Documentos/Godot engine proyectos/Game TiledYousef Godot/.mono/temp/obj/Tools/Game TiledYousef Godot.csprojAssemblyReference.cache
+/home/ariel/Documentos/Godot engine proyectos/Game TiledYousef Godot/.mono/temp/obj/Tools/Game TiledYousef Godot.dll
+/home/ariel/Documentos/Godot engine proyectos/Game TiledYousef Godot/.mono/temp/obj/Tools/Game TiledYousef Godot.pdb
+/home/ariel/Escritorio/Game TiledYousef Godot VERSION CSHARP/.mono/temp/bin/Tools/Game TiledYousef Godot.dll
+/home/ariel/Escritorio/Game TiledYousef Godot VERSION CSHARP/.mono/temp/bin/Tools/Game TiledYousef Godot.pdb
+/home/ariel/Escritorio/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Tools/Game TiledYousef Godot.csprojAssemblyReference.cache
+/home/ariel/Escritorio/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Tools/Game TiledYousef Godot.dll
+/home/ariel/Escritorio/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Tools/Game TiledYousef Godot.pdb

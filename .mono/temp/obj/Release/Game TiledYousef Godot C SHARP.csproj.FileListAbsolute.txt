@@ -1,0 +1,5 @@
+/home/ariel/Escritorio/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Release/Game TiledYousef Godot C SHARP.csprojAssemblyReference.cache
+/home/ariel/Escritorio/Game TiledYousef Godot VERSION CSHARP/.mono/temp/bin/Release/Game TiledYousef Godot C SHARP.dll
+/home/ariel/Escritorio/Game TiledYousef Godot VERSION CSHARP/.mono/temp/bin/Release/Game TiledYousef Godot C SHARP.pdb
+/home/ariel/Escritorio/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Release/Game TiledYousef Godot C SHARP.dll
+/home/ariel/Escritorio/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Release/Game TiledYousef Godot C SHARP.pdb
