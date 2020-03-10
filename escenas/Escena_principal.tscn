@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://escenas_importadas/models/mosaic_rock.glb" type="PackedScene" id=1]
 [ext_resource path="res://codigos_CSHARP/Escena_principal.cs" type="Script" id=2]
@@ -36,6 +36,9 @@ font_data = ExtResource( 3 )
 [sub_resource type="DynamicFont" id=6]
 size = 25
 font_data = ExtResource( 3 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 50, 1, 50 )
 
 [node name="Escena_principal" type="Spatial"]
 script = ExtResource( 2 )
@@ -81,7 +84,7 @@ environment = SubResource( 3 )
 transform = Transform( 0.373231, -0.696921, 0.612372, 0.499995, 0.70711, 0.5, -0.781475, 0.119568, 0.612373, 0, 17.2, 0 )
 light_energy = 0.2
 
-[node name="UI" type="Node" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource( 14 )
 
 [node name="Label" type="Label" parent="UI"]
@@ -145,6 +148,7 @@ __meta__ = {
 }
 
 [node name="interfaceObjetos2" parent="UI" instance=ExtResource( 5 )]
+RayoDistancia = 10
 
 [node name="fondos" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.5, 5, 6.5 )
@@ -905,3 +909,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 1 )
 [node name="building" type="Spatial" parent="." groups=[
 "building",
 ]]
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+shape = SubResource( 7 )

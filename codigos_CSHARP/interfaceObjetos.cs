@@ -41,9 +41,9 @@ public class interfaceObjetos : Control
        if(InstanciarCasa)
        {
             edificioInstanciado.Translation = new Vector3(
-            -GetGlobalMousePosition().x / 100,
+            GetGlobalMousePosition().y / 100,
             0,
-            -GetGlobalMousePosition().y / 100);//la posición es la misma que la del mouse
+            -GetGlobalMousePosition().x / 100);//la posición es la misma que la del mouse
             
        }
        //GD.Print(GetGlobalMousePosition());
@@ -79,19 +79,27 @@ public class interfaceObjetos : Control
 
     public override void _Input(InputEvent @event)
     {
-        if(@event is InputEventMouseButton eventMouseButton && eventMouseButton.Pressed && eventMouseButton.ButtonIndex == 1)
+        if(@event is InputEventMouseButton evento)
         {
-            Vector3 origen = Camera_aguila.ProjectRayOrigin(eventMouseButton.Position);//determina la posición de la camara 3D respecto al viewport 
-            Vector3 destino = origen + Camera_aguila.ProjectRayOrigin(eventMouseButton.Position) * RayoDistancia;
-            var espacio =  Camera_aguila.GetWorld().DirectSpaceState;
-            var intercepto = espacio.IntersectRay(origen,destino,new Godot.Collections.Array{}, 1);
-            //foreach (var keys in intercepto)
-            //{
-            //    GD.Print(keys);
-            //}
-
+            if(Input.IsActionJustPressed("click_izquierdo"))
+            {
+                //Vector3 origen = Camera_aguila.ProjectRayOrigin(evento.Position);//determina la posición de la camara 3D respecto al viewport 
+                Vector3 origen = Camera_aguila.ProjectRayOrigin(GetGlobalMousePosition());//determina la posición de la camara 3D respecto al viewport 
+                
+                Vector3 destino = origen + Camera_aguila.ProjectRayNormal(evento.Position) * RayoDistancia;
+                GD.Print(destino);
+                var espacio =  Camera_aguila.GetWorld().DirectSpaceState;
+                var intercepto = espacio.IntersectRay(origen,destino,new Godot.Collections.Array{}, 1);
+                //foreach (var keys in intercepto)
+                //{
+                //    GD.Print(keys);
+                //}
+            }
         }
+
     }
-
-
 }
+
+
+
+

@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Game TiledYousef Godot C SHARP"
+config/name="Godot C# Game for developing Solar PV plants"
 run/main_scene="res://escenas/Escena_principal.tscn"
 config/icon="res://icon.png"
 
