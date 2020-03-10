@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class UI : Node
+public class UI : CanvasLayer
 {
     // Declare member variables here. Examples:
     // private int a = 2;
