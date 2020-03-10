@@ -43,9 +43,9 @@ public class Escena_principal : Spatial
 
         //inicializo nodos para ahorrar recursos
         mosaicos = GetNode<Spatial>("mosaicos");
-        Camera_superior = GetNode<Camera>("camaras/Camera_superior");
-        Camera_vista_media = GetNode<Camera>("camaras/Camera_vista_media");
-        Camera_aguila = GetNode<Camera>("camaras/Camera_aguila");
+        Camera_superior = (Camera)GetTree().GetNodesInGroup("Camera_superior")[0];
+        Camera_vista_media = (Camera)GetTree().GetNodesInGroup("Camera_vista_media")[0];
+        Camera_aguila = (Camera)GetTree().GetNodesInGroup("Camera_aguila")[0];
         
         forma1();
     }

@@ -13,3 +13,8 @@
 /home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Tools/Game TiledYousef Godot C SHARP.csprojAssemblyReference.cache
 /home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Tools/Game TiledYousef Godot C SHARP.dll
 /home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Game TiledYousef Godot VERSION CSHARP/.mono/temp/obj/Tools/Game TiledYousef Godot C SHARP.pdb
+/home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Godot C# Game for developing Solar PV plants/.mono/temp/bin/Tools/Game TiledYousef Godot C SHARP.dll
+/home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Godot C# Game for developing Solar PV plants/.mono/temp/bin/Tools/Game TiledYousef Godot C SHARP.pdb
+/home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Godot C# Game for developing Solar PV plants/.mono/temp/obj/Tools/Game TiledYousef Godot C SHARP.csprojAssemblyReference.cache
+/home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Godot C# Game for developing Solar PV plants/.mono/temp/obj/Tools/Game TiledYousef Godot C SHARP.dll
+/home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Godot C# Game for developing Solar PV plants/.mono/temp/obj/Tools/Game TiledYousef Godot C SHARP.pdb
