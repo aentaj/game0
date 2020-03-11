@@ -17,6 +17,7 @@ public class interfaceObjetos : Control
     private Spatial building;
     private PopupMenu MenuCasas;//referencia al poput menu
     private bool InstanciarCasa = false;
+    private Vector3 posicionNuevaCasa;
 
     [Export]
     int RayoDistancia = 1000;
@@ -29,23 +30,20 @@ public class interfaceObjetos : Control
         Camera_aguila =((Camera)GetTree().GetNodesInGroup("Camera_aguila")[0]);//guardo la camara
         Camera_superior = ((Camera)GetTree().GetNodesInGroup("Camera_superior")[0]);//guardo la camara
         Camera_vista_media = ((Camera)GetTree().GetNodesInGroup("Camera_vista_media")[0]);//guardo la camara
-        
-        
-        
-        
     }
+        
+        
+        
+        
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
    public override void _Process(float delta)
    {
        if(InstanciarCasa)
        {
-            edificioInstanciado.Translation = new Vector3(
-            GetGlobalMousePosition().y / 100,
-            0,
-            -GetGlobalMousePosition().x / 100);//la posición es la misma que la del mouse
-            
+            edificioInstanciado.Translation = posicionNuevaCasa;
        }
+            
        //GD.Print(GetGlobalMousePosition());
        
    }
@@ -79,22 +77,35 @@ public class interfaceObjetos : Control
 
     public override void _Input(InputEvent @event)
     {
-        if(@event is InputEventMouseButton evento)
+        if(@event is InputEventMouseMotion evento)
         {
-            if(Input.IsActionJustPressed("click_izquierdo"))
-            {
+            
+            //if(evento.Pressed && evento.ButtonIndex == (int)ButtonList.Left)
+            //{
                 //Vector3 origen = Camera_aguila.ProjectRayOrigin(evento.Position);//determina la posición de la camara 3D respecto al viewport 
-                Vector3 origen = Camera_aguila.ProjectRayOrigin(GetGlobalMousePosition());//determina la posición de la camara 3D respecto al viewport 
-                
-                Vector3 destino = origen + Camera_aguila.ProjectRayNormal(evento.Position) * RayoDistancia;
-                GD.Print(destino);
-                var espacio =  Camera_aguila.GetWorld().DirectSpaceState;
-                var intercepto = espacio.IntersectRay(origen,destino,new Godot.Collections.Array{}, 1);
-                //foreach (var keys in intercepto)
+            Vector3 origen = Camera_aguila.ProjectRayOrigin(GetGlobalMousePosition());//determina la posición de la camara 3D respecto al viewport 
+            
+            Vector3 destino = origen + Camera_aguila.ProjectRayNormal(evento.Position) * RayoDistancia;
+            var espacio =  Camera_aguila.GetWorld().DirectSpaceState;
+            var intercepto = espacio.IntersectRay(origen,destino,new Godot.Collections.Array{}, 1);
+            posicionNuevaCasa = (Vector3)intercepto["position"];
+            GD.Print(intercepto["position"]);
+                //GD.Print(intercepto);
+                //if((bool)intercepto["collider"])
                 //{
-                //    GD.Print(keys);
+                //    GD.Print("intercepto con el suelo");
                 //}
-            }
+
+                /*foreach (var keys in intercepto.Keys)
+                {
+                    GD.Print(keys);
+                }
+                foreach (var Values in intercepto.Values)
+                {
+                    GD.Print(Values);
+                }*/
+
+            //}
         }
 
     }
