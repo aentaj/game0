@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://codigos_CSHARP/interfaceObjetos.cs" type="Script" id=1]
 [ext_resource path="res://textures/House_image_icon.png" type="Texture" id=2]
-[ext_resource path="res://textures/X.png" type="Texture" id=3]
+[ext_resource path="res://textures/house_2 icon.png" type="Texture" id=3]
 [ext_resource path="res://escenas/models_Scene/house_1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://escenas/models_Scene/house_2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://escenas/models_Scene/house_3.tscn" type="PackedScene" id=6]
+[ext_resource path="res://textures/house_3 icon.png" type="Texture" id=7]
+[ext_resource path="res://textures/house_1 icon.png" type="Texture" id=8]
 
 [node name="interfaceObjetos" type="Control"]
 anchor_right = 1.0
@@ -53,7 +55,7 @@ margin_left = 88.0
 margin_top = 2.38419e-07
 margin_right = 164.0
 margin_bottom = 70.0
-icon = ExtResource( 3 )
+icon = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -73,6 +75,8 @@ margin_left = 248.0
 margin_top = 2.38419e-07
 margin_right = 324.0
 margin_bottom = 70.0
-icon = ExtResource( 3 )
+icon = ExtResource( 7 )
 [connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
 [connection signal="button_down" from="PopupMenu/Button2" to="." method="_on_Button2_button_down"]
+[connection signal="button_down" from="PopupMenu/Button3" to="." method="_on_Button3_button_down"]
+[connection signal="button_down" from="PopupMenu/Button4" to="." method="_on_Button4_button_down"]
