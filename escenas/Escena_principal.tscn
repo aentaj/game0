@@ -147,7 +147,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="interfaceObjetos2" parent="UI" instance=ExtResource( 5 )]
+[node name="interfaceObjetos" parent="UI" groups=[
+"interfaceObjetos",
+] instance=ExtResource( 5 )]
 
 [node name="fondos" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.5, 5, 6.5 )
