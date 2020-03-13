@@ -28,7 +28,7 @@ public class interfaceObjetos : Control
     //private Godot.Collections.Dictionary intercepto = new Godot.Collections.Dictionary(); //diccionario global que guarda las posiciones donde esta el mouse
     //private Godot.Collections.Array intercepto = new Godot.Collections.Array { };
 
-    private string CamaraActiva;//para saber cual es la camara activa
+    public string CamaraActiva;//para saber cual es la camara activa
     private Camera camaraActual;//la camara actual activa
     private Vector3 origen;
     private Vector3 destino;
@@ -54,19 +54,17 @@ public class interfaceObjetos : Control
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
    public override void _Process(float delta)
    {
+        //CamaraActiva = GetViewport().GetCamera().Name;//tomo la camara activa del viewport
         if(InstanciarCasa)
         {
-            if( InstanciarCasa == true)
-            {
-                RayoDeCamara();
-            }
-                
+            MoverEdificioInstanciado();
             if(Input.IsActionJustPressed("click_derecho"))
             {
                 InstanciarCasa = false;
             }
         }    
-       GD.Print(GetViewport().GetCamera().Name);   
+                
+       //GD.Print(GetViewport().GetCamera().Name);   
        //GD.Print(GetGlobalMousePosition());  
    }
 
@@ -77,19 +75,19 @@ public class interfaceObjetos : Control
 
     private void _on_Button2_button_down()
     {  
-        GD.Print("presione el primer boton");
+        //GD.Print("presione el primer boton");
         instanciarEdificio(0);//si presiono este boton instancio la casa que esta en el indice 0
         MenuCasas.Hide();//hace invisible el menu
     }
     private void _on_Button3_button_down()
     {  
-        GD.Print("presione el primer boton");
+        //GD.Print("presione el primer boton");
         instanciarEdificio(1);//si presiono este boton instancio la casa que esta en el indice 0
         MenuCasas.Hide();//hace invisible el menu
     }
     private void _on_Button4_button_down()
     {  
-        GD.Print("presione el primer boton");
+        //GD.Print("presione el primer boton");
         instanciarEdificio(2);//si presiono este boton instancio la casa que esta en el indice 0
         MenuCasas.Hide();//hace invisible el menu
     }
@@ -114,24 +112,24 @@ public class interfaceObjetos : Control
 
 
 
-    private void RayoDeCamara() //funcion para tirar un rayo desde la camara y determinar la posición  del mouse con respecto a la camara
+    private void MoverEdificioInstanciado() //funcion para tirar un rayo desde la camara y determinar la posición  del mouse con respecto a la camara
     {  
         if(CamaraActiva == "Camera_aguila")
         {
             camaraActual = Camera_aguila;
-            GD.Print("estoy en Camera_aguila");
+            //GD.Print("estoy en Camera_aguila");
         }
             
         if(CamaraActiva == "Camera_superior")
         {
             camaraActual = Camera_superior;
-            GD.Print("estoy en Camera_superior");
+            //GD.Print("estoy en Camera_superior");
         }
             
         if(CamaraActiva == "Camera_vista_media")
         {
             camaraActual = Camera_vista_media;
-            GD.Print("estoy en Camera_vista_media"); 
+            //GD.Print("estoy en Camera_vista_media"); 
         }
   
 
@@ -144,7 +142,7 @@ public class interfaceObjetos : Control
         if(intercepto.Contains("position"))//si el diccionario tiene esa clave
         {
             edificioInstanciado.Translation = (Vector3)intercepto["position"];//guardo la posición del mouse
-            GD.Print(intercepto["position"]);//imprimo por pantalla la ubicación del mouse
+            //GD.Print(intercepto["position"]);//imprimo por pantalla la ubicación del mouse
         }    
     }
         

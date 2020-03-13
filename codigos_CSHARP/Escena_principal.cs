@@ -27,7 +27,7 @@ public class Escena_principal : Spatial
 
     Vector2 rotar = new Vector2();
     public int camara_elegida = 0;
-
+    private interfaceObjetos interfaceObjetos;//accedo al nodo interface objeto
 
     //public static var script_global_cSharp = (script_global_cSharp)GetNode("/root/script_global_cSharp");
 
@@ -46,8 +46,8 @@ public class Escena_principal : Spatial
         Camera_superior = (Camera)GetTree().GetNodesInGroup("Camera_superior")[0];
         Camera_vista_media = (Camera)GetTree().GetNodesInGroup("Camera_vista_media")[0];
         Camera_aguila = (Camera)GetTree().GetNodesInGroup("Camera_aguila")[0];
-        
         forma1();
+        interfaceObjetos = GetNode<interfaceObjetos>("UI/interfaceObjetos");
     }
 
     //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -99,8 +99,6 @@ public class Escena_principal : Spatial
         }
     }
 
-
-
     private void cambiarCamara()
     {//esta funcion cambia las camaras
         if (Input.IsActionJustPressed("w"))
@@ -115,18 +113,21 @@ public class Escena_principal : Spatial
             switch (camara_elegida)
             {
                 case 0:
+                    interfaceObjetos.CamaraActiva = "Camera_aguila";//variable global que receibo de interface
                     Camera_aguila.Current = true;
                     Camera_superior.Current = false;
                     Camera_vista_media.Current = false;
                     return;
 
                 case 1:
+                    interfaceObjetos.CamaraActiva = "Camera_superior";//variable global que receibo de interface
                     Camera_aguila.Current = false;
                     Camera_superior.Current = true;
                     Camera_vista_media.Current = false;
                     return;
 
                 case 2:
+                    interfaceObjetos.CamaraActiva = "Camera_vista_media";//variable global que receibo de interface
                     Camera_aguila.Current = false;
                     Camera_superior.Current = false;
                     Camera_vista_media.Current = true;
@@ -136,7 +137,6 @@ public class Escena_principal : Spatial
 
         }
     }
-
 
     //eventos relacionados al mouse
     public override void _Input(InputEvent @event)
