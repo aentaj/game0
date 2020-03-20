@@ -22,14 +22,13 @@ public class Escena_principal : Spatial
     private Camera Camera_superior;
     private Camera Camera_vista_media;
     private Camera Camera_aguila;
-
     private Spatial mosaico;
-
     Vector2 rotar = new Vector2();
     public int camara_elegida = 0;
     private interfaceObjetos interfaceObjetos;//accedo al nodo interface objeto
 
     //public static var script_global_cSharp = (script_global_cSharp)GetNode("/root/script_global_cSharp");
+
 
     public override void _Ready()
     {
@@ -47,8 +46,9 @@ public class Escena_principal : Spatial
         Camera_vista_media = (Camera)GetTree().GetNodesInGroup("Camera_vista_media")[0];
         Camera_aguila = (Camera)GetTree().GetNodesInGroup("Camera_aguila")[0];
         forma1();
-        interfaceObjetos = GetNode<interfaceObjetos>("UI/interfaceObjetos");
+        interfaceObjetos = (interfaceObjetos)GetTree().GetNodesInGroup("menu_Casas")[0];
     }
+
 
     //  // Called every frame. 'delta' is the elapsed time since the previous frame.
     //  public override void _Process(float delta)
@@ -84,13 +84,9 @@ public class Escena_principal : Spatial
                     mosaico = (Spatial)Masaicos[0].Instance();//instancio la escena empaquetada mosaicos
                     mosaicos.AddChild(mosaico);//agrego el nodo a la escena
                                                //cambia la posicion de los mosaicos
-                    mosaico.Translation = new Vector3
-                    (
+                    mosaico.Translation = new Vector3(
                         (x * tileXoffset) - largo + 1,//posición en X
-
-                        //(float)Godot.GD.RandRange(0,1),//posición en Y convierto randRange en float
                         0,
-
                         (z * tileXoffset) - ancho + 1// posición en Z
                     );
                 }
@@ -98,6 +94,7 @@ public class Escena_principal : Spatial
             }
         }
     }
+
 
     private void cambiarCamara()
     {//esta funcion cambia las camaras

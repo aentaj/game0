@@ -7,13 +7,11 @@ public class interfaceObjetos : Control
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
-    [Export]
     
+    [Export]
     private Array<PackedScene> edificios = new Array<PackedScene>();
     private Camera Camera_aguila,Camera_superior,Camera_vista_media;//para precargar las camaras
-
     private Spatial edificioInstanciado;
-
     private Spatial building;
     private PopupMenu MenuCasas;//referencia al poput menu
     private bool InstanciarCasa = false;
@@ -70,21 +68,35 @@ public class interfaceObjetos : Control
 
     private void _on_Button_button_down()
     {
-        MenuCasas.Show();
+        MenuCasas.Popup_();//hace visible y invisible el poput menu
+        
+        //cambio la posición del POPUPMENU
+        MenuCasas.SetPosition(new Vector2
+            ( //la posición del menu es relativo al boton
+            MenuCasas.RectPosition.x,//la posición en x es la misma
+            this.RectGlobalPosition.y//posicion global en y donde esta situado el padre de los nodos
+            )
+        );
     }
+
 
     private void _on_Button2_button_down()
     {  
-        //GD.Print("presione el primer boton");
+        GD.Print("presione el primer boton");
+        
         instanciarEdificio(0);//si presiono este boton instancio la casa que esta en el indice 0
         MenuCasas.Hide();//hace invisible el menu
     }
+
+
     private void _on_Button3_button_down()
     {  
         //GD.Print("presione el primer boton");
         instanciarEdificio(1);//si presiono este boton instancio la casa que esta en el indice 0
         MenuCasas.Hide();//hace invisible el menu
     }
+
+
     private void _on_Button4_button_down()
     {  
         //GD.Print("presione el primer boton");
@@ -114,6 +126,7 @@ public class interfaceObjetos : Control
 
     private void MoverEdificioInstanciado() //funcion para tirar un rayo desde la camara y determinar la posición  del mouse con respecto a la camara
     {  
+        //GD.Print("estoy en la función mover edificio instanciado");
         if(CamaraActiva == "Camera_aguila")
         {
             camaraActual = Camera_aguila;
@@ -129,26 +142,26 @@ public class interfaceObjetos : Control
         if(CamaraActiva == "Camera_vista_media")
         {
             camaraActual = Camera_vista_media;
-            //GD.Print("estoy en Camera_vista_media"); 
+           //GD.Print("estoy en Camera_vista_media"); 
         }
   
 
         origen = camaraActual.ProjectRayOrigin(GetGlobalMousePosition());//determina la posición de la camara 3D respecto al viewport 
-        destino = origen + camaraActual.ProjectRayNormal(GetLocalMousePosition()) * RayoDistancia;//rayo lanzado desde la camara y el mouse
+        destino = origen + camaraActual.ProjectRayNormal(GetGlobalMousePosition()) * RayoDistancia;//rayo lanzado desde la camara y el mouse
         espacio =  camaraActual.GetWorld().DirectSpaceState;
         intercepto = espacio.IntersectRay(origen,destino,new Godot.Collections.Array{}, 1);//esto es una variable global para saber la posición del mouse
         
-
+        
         if(intercepto.Contains("position"))//si el diccionario tiene esa clave
         {
             edificioInstanciado.Translation = (Vector3)intercepto["position"];//guardo la posición del mouse
-            //GD.Print(intercepto["position"]);//imprimo por pantalla la ubicación del mouse
+            GD.Print(intercepto["position"]);//imprimo por pantalla la ubicación del mouse donde intercepto dependiendo la Cámara
         }    
     }
         
+}
         
 
-}
 
 
 
