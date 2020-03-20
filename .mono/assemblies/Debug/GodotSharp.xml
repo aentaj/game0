@@ -11808,12 +11808,12 @@
         </member>
         <member name="M:Godot.ConfigFile.SetValue(System.String,System.String,System.Object)">
             <summary>
-            <para>Assigns a value to the specified key of the specified section. If the section and/or the key do not exist, they are created. Passing a <c>null</c> value deletes the specified key if it exists, and deletes the section if it ends up empty once the key has been removed.</para>
+            <para>Assigns a value to the specified key of the specified section. If either the section or the key do not exist, they are created. Passing a <c>null</c> value deletes the specified key if it exists, and deletes the section if it ends up empty once the key has been removed.</para>
             </summary>
         </member>
         <member name="M:Godot.ConfigFile.GetValue(System.String,System.String,System.Object)">
             <summary>
-            <para>Returns the current value for the specified section and key. If the section and/or the key do not exist, the method returns the value of the optional <c>default</c> argument, or <c>null</c> if it is omitted.</para>
+            <para>Returns the current value for the specified section and key. If either the section or the key do not exist, the method returns the fallback <c>default</c> value. If <c>default</c> is not specified or set to <c>null</c>, an error is also raised.</para>
             </summary>
         </member>
         <member name="M:Godot.ConfigFile.HasSection(System.String)">
@@ -11833,17 +11833,22 @@
         </member>
         <member name="M:Godot.ConfigFile.GetSectionKeys(System.String)">
             <summary>
-            <para>Returns an array of all defined key identifiers in the specified section.</para>
+            <para>Returns an array of all defined key identifiers in the specified section. Raises an error and returns an empty array if the section does not exist.</para>
             </summary>
         </member>
         <member name="M:Godot.ConfigFile.EraseSection(System.String)">
             <summary>
-            <para>Deletes the specified section along with all the key-value pairs inside.</para>
+            <para>Deletes the specified section along with all the key-value pairs inside. Raises an error if the section does not exist.</para>
+            </summary>
+        </member>
+        <member name="M:Godot.ConfigFile.EraseSectionKey(System.String,System.String)">
+            <summary>
+            <para>Deletes the specified key in a section. Raises an error if either the section or the key do not exist.</para>
             </summary>
         </member>
         <member name="M:Godot.ConfigFile.Load(System.String)">
             <summary>
-            <para>Loads the config file specified as a parameter. The file's contents are parsed and loaded in the ConfigFile object which the method was called on.</para>
+            <para>Loads the config file specified as a parameter. The file's contents are parsed and loaded in the <see cref="T:Godot.ConfigFile"/> object which the method was called on.</para>
             <para>Returns one of the <see cref="T:Godot.Error"/> code constants (<c>OK</c> on success).</para>
             </summary>
         </member>
@@ -11855,7 +11860,31 @@
         </member>
         <member name="M:Godot.ConfigFile.Save(System.String)">
             <summary>
-            <para>Saves the contents of the ConfigFile object to the file specified as a parameter. The output file uses an INI-style structure.</para>
+            <para>Saves the contents of the <see cref="T:Godot.ConfigFile"/> object to the file specified as a parameter. The output file uses an INI-style structure.</para>
+            <para>Returns one of the <see cref="T:Godot.Error"/> code constants (<c>OK</c> on success).</para>
+            </summary>
+        </member>
+        <member name="M:Godot.ConfigFile.LoadEncrypted(System.String,System.Byte[])">
+            <summary>
+            <para>Loads the encrypted config file specified as a parameter, using the provided <c>key</c> to decrypt it. The file's contents are parsed and loaded in the <see cref="T:Godot.ConfigFile"/> object which the method was called on.</para>
+            <para>Returns one of the <see cref="T:Godot.Error"/> code constants (<c>OK</c> on success).</para>
+            </summary>
+        </member>
+        <member name="M:Godot.ConfigFile.LoadEncryptedPass(System.String,System.String)">
+            <summary>
+            <para>Loads the encrypted config file specified as a parameter, using the provided <c>password</c> to decrypt it. The file's contents are parsed and loaded in the <see cref="T:Godot.ConfigFile"/> object which the method was called on.</para>
+            <para>Returns one of the <see cref="T:Godot.Error"/> code constants (<c>OK</c> on success).</para>
+            </summary>
+        </member>
+        <member name="M:Godot.ConfigFile.SaveEncrypted(System.String,System.Byte[])">
+            <summary>
+            <para>Saves the contents of the <see cref="T:Godot.ConfigFile"/> object to the AES-256 encrypted file specified as a parameter, using the provided <c>key</c> to encrypt it. The output file uses an INI-style structure.</para>
+            <para>Returns one of the <see cref="T:Godot.Error"/> code constants (<c>OK</c> on success).</para>
+            </summary>
+        </member>
+        <member name="M:Godot.ConfigFile.SaveEncryptedPass(System.String,System.String)">
+            <summary>
+            <para>Saves the contents of the <see cref="T:Godot.ConfigFile"/> object to the AES-256 encrypted file specified as a parameter, using the provided <c>password</c> to encrypt it. The output file uses an INI-style structure.</para>
             <para>Returns one of the <see cref="T:Godot.Error"/> code constants (<c>OK</c> on success).</para>
             </summary>
         </member>
@@ -18616,7 +18645,8 @@
         <member name="M:Godot.KinematicBody.MoveAndSlide(Godot.Vector3,System.Nullable{Godot.Vector3},System.Boolean,System.Int32,System.Single,System.Boolean)">
             <summary>
             <para>Moves the body along a vector. If the body collides with another, it will slide along the other body rather than stop immediately. If the other body is a <see cref="T:Godot.KinematicBody"/> or <see cref="T:Godot.RigidBody"/>, it will also be affected by the motion of the other body. You can use this to make moving or rotating platforms, or to make nodes push other nodes.</para>
-            <para><c>linear_velocity</c> is the velocity vector (typically meters per second). Unlike in <see cref="M:Godot.KinematicBody.MoveAndCollide(Godot.Vector3,System.Boolean,System.Boolean,System.Boolean)"/>, you should not multiply it by <c>delta</c> — the physics engine handles applying the velocity.</para>
+            <para>This method should be used in <see cref="M:Godot.Node._PhysicsProcess(System.Single)"/> (or in a method called by <see cref="M:Godot.Node._PhysicsProcess(System.Single)"/>), as it uses the physics step's <c>delta</c> value automatically in calculations. Otherwise, the simulation will run at an incorrect speed.</para>
+            <para><c>linear_velocity</c> is the velocity vector (typically meters per second). Unlike in <see cref="M:Godot.KinematicBody.MoveAndCollide(Godot.Vector3,System.Boolean,System.Boolean,System.Boolean)"/>, you should not multiply it by <c>delta</c> — the physics engine handles applying the velocity. </para>
             <para><c>up_direction</c> is the up direction, used to determine what is a wall and what is a floor or a ceiling. If set to the default value of <c>Vector3(0, 0, 0)</c>, everything is considered a wall.</para>
             <para>If <c>stop_on_slope</c> is <c>true</c>, body will not slide on slopes if you include gravity in <c>linear_velocity</c>.</para>
             <para>If the body collides, it will change direction a maximum of <c>max_slides</c> times before it stops.</para>
@@ -18709,7 +18739,8 @@
         <member name="M:Godot.KinematicBody2D.MoveAndSlide(Godot.Vector2,System.Nullable{Godot.Vector2},System.Boolean,System.Int32,System.Single,System.Boolean)">
             <summary>
             <para>Moves the body along a vector. If the body collides with another, it will slide along the other body rather than stop immediately. If the other body is a <see cref="T:Godot.KinematicBody2D"/> or <see cref="T:Godot.RigidBody2D"/>, it will also be affected by the motion of the other body. You can use this to make moving or rotating platforms, or to make nodes push other nodes.</para>
-            <para><c>linear_velocity</c> is the velocity vector in pixels per second. Unlike in <see cref="M:Godot.KinematicBody2D.MoveAndCollide(Godot.Vector2,System.Boolean,System.Boolean,System.Boolean)"/>, you should not multiply it by <c>delta</c> — the physics engine handles applying the velocity.</para>
+            <para>This method should be used in <see cref="M:Godot.Node._PhysicsProcess(System.Single)"/> (or in a method called by <see cref="M:Godot.Node._PhysicsProcess(System.Single)"/>), as it uses the physics step's <c>delta</c> value automatically in calculations. Otherwise, the simulation will run at an incorrect speed.</para>
+            <para><c>linear_velocity</c> is the velocity vector in pixels per second. Unlike in <see cref="M:Godot.KinematicBody2D.MoveAndCollide(Godot.Vector2,System.Boolean,System.Boolean,System.Boolean)"/>, you should not multiply it by <c>delta</c> — the physics engine handles applying the velocity. </para>
             <para><c>up_direction</c> is the up direction, used to determine what is a wall and what is a floor or a ceiling. If set to the default value of <c>Vector2(0, 0)</c>, everything is considered a wall. This is useful for topdown games.</para>
             <para>If <c>stop_on_slope</c> is <c>true</c>, body will not slide on slopes when you include gravity in <c>linear_velocity</c> and the body is standing still.</para>
             <para>If the body collides, it will change direction a maximum of <c>max_slides</c> times before it stops.</para>
