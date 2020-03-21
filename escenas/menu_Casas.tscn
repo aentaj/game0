@@ -21,7 +21,19 @@ __meta__ = {
 edificios = [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ) ]
 RayoDistancia = 5000
 
-[node name="Button" type="Button" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_bottom = 70.0
+color = Color( 0, 0.658824, 0.811765, 0.309804 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 4.0
+margin_right = 80.0
+margin_bottom = 70.0
+
+[node name="Button" type="Button" parent="HBoxContainer"]
 margin_right = 76.0
 margin_bottom = 70.0
 icon = ExtResource( 3 )
@@ -29,27 +41,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 80.0
-margin_right = 80.0
-margin_bottom = 70.0
-color = Color( 0, 0.658824, 0.811765, 0.309804 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="PopupMenu" type="PopupMenu" parent="." groups=[
-"PopupMenu",
+[node name="edificios" type="HBoxContainer" parent="." groups=[
+"edificios",
 ]]
 margin_left = 84.0
-margin_right = 147.0
+margin_right = 320.0
 margin_bottom = 70.0
-items = [ "Item 0", null, 0, false, false, 0, 0, null, "", false ]
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Button2" type="Button" parent="PopupMenu"]
+[node name="Button2" type="Button" parent="edificios"]
 margin_right = 76.0
 margin_bottom = 70.0
 icon = ExtResource( 4 )
@@ -57,7 +56,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button3" type="Button" parent="PopupMenu"]
+[node name="Button3" type="Button" parent="edificios"]
 margin_left = 80.0
 margin_right = 156.0
 margin_bottom = 70.0
@@ -67,12 +66,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button4" type="Button" parent="PopupMenu"]
+[node name="Button4" type="Button" parent="edificios"]
 margin_left = 160.0
 margin_right = 236.0
 margin_bottom = 70.0
 icon = ExtResource( 1 )
-[connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
-[connection signal="button_down" from="PopupMenu/Button2" to="." method="_on_Button2_button_down"]
-[connection signal="button_down" from="PopupMenu/Button3" to="." method="_on_Button3_button_down"]
-[connection signal="button_down" from="PopupMenu/Button4" to="." method="_on_Button4_button_down"]
+[connection signal="button_down" from="HBoxContainer/Button" to="." method="_on_Button_button_down"]
+[connection signal="button_down" from="edificios/Button2" to="." method="_on_Button2_button_down"]
+[connection signal="button_down" from="edificios/Button3" to="." method="_on_Button3_button_down"]
+[connection signal="button_down" from="edificios/Button4" to="." method="_on_Button4_button_down"]

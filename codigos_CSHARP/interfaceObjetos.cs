@@ -13,7 +13,7 @@ public class interfaceObjetos : Control
     private Camera Camera_aguila,Camera_superior,Camera_vista_media;//para precargar las camaras
     private Spatial edificioInstanciado;
     private Spatial building;
-    private PopupMenu MenuCasas;//referencia al poput menu
+    private Control MenuCasas;//referencia al poput menu
     private bool InstanciarCasa = false;
     //private Vector3 posicionNuevaCasa;
 
@@ -36,7 +36,7 @@ public class interfaceObjetos : Control
 
     public override void _Ready()
     {
-        MenuCasas = (PopupMenu)GetTree().GetNodesInGroup("PopupMenu")[0];//como el popupmenu es el segundo el indice es 1
+        MenuCasas = (Control)GetTree().GetNodesInGroup("edificios")[0];//como el popupmenu es el segundo el indice es 1
         building = (Spatial)GetTree().GetNodesInGroup("building")[0];//busco el nodo donde se crearan los edificios
         //precargo las camaras
         Camera_aguila =((Camera)GetTree().GetNodesInGroup("Camera_aguila")[0]);//guardo la camara
@@ -68,7 +68,7 @@ public class interfaceObjetos : Control
 
     private void _on_Button_button_down()
     {
-        MenuCasas.Popup_();//hace visible y invisible el poput menu
+        MenuCasas.Visible = true;//hace visible y invisible el poput menu
         
         //cambio la posición del POPUPMENU
         MenuCasas.SetPosition(new Vector2
@@ -83,25 +83,24 @@ public class interfaceObjetos : Control
     private void _on_Button2_button_down()
     {  
         GD.Print("presione el primer boton");
-        
         instanciarEdificio(0);//si presiono este boton instancio la casa que esta en el indice 0
-        MenuCasas.Hide();//hace invisible el menu
+        MenuCasas.Visible = false;//hace invisible el menu
     }
 
 
     private void _on_Button3_button_down()
     {  
-        //GD.Print("presione el primer boton");
+        GD.Print("presione segundo boton");
         instanciarEdificio(1);//si presiono este boton instancio la casa que esta en el indice 0
-        MenuCasas.Hide();//hace invisible el menu
+         MenuCasas.Visible = false;//hace invisible el menu
     }
 
 
     private void _on_Button4_button_down()
     {  
-        //GD.Print("presione el primer boton");
+        GD.Print("presione el tercer boton");
         instanciarEdificio(2);//si presiono este boton instancio la casa que esta en el indice 0
-        MenuCasas.Hide();//hace invisible el menu
+        MenuCasas.Visible = false;//hace invisible el menu
     }
 
 
