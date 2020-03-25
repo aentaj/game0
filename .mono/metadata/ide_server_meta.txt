@@ -1,2 +1,0 @@
-﻿37715
-/home/ariel/programas instalados/Godot Engine/Godot Engine 3.2/3.2.1 stable/Version Mono/Godot_v3.2.1-stable_mono_x11_64/Godot_v3.2.1-stable_mono_x11.64

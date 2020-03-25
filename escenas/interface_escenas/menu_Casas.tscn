@@ -4,13 +4,12 @@
 [ext_resource path="res://textures/house_2 icon.png" type="Texture" id=2]
 [ext_resource path="res://textures/House_image_icon.png" type="Texture" id=3]
 [ext_resource path="res://textures/house_1 icon.png" type="Texture" id=4]
-[ext_resource path="res://codigos_CSHARP/InterfaceObjetos.cs" type="Script" id=5]
-[ext_resource path="res://escenas/models_Scene/house_2.tscn" type="PackedScene" id=6]
-[ext_resource path="res://escenas/models_Scene/house_1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://codigos_CSHARP/MenuCasas.cs" type="Script" id=5]
+[ext_resource path="res://escenas/models_Scene/house_1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://escenas/models_Scene/house_2.tscn" type="PackedScene" id=7]
 [ext_resource path="res://escenas/models_Scene/house_3.tscn" type="PackedScene" id=8]
 
-
-[node name="menu_Casas" type="HBoxContainer" groups=[
+[node name="menu_casas" type="HBoxContainer" groups=[
 "menu_Casas",
 ]]
 anchor_right = 1.0
@@ -19,8 +18,7 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-edificios = [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ) ]
-RayoDistancia = 5000
+edificios = [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_bottom = 70.0
@@ -45,6 +43,7 @@ __meta__ = {
 [node name="edificios" type="HBoxContainer" parent="." groups=[
 "edificios",
 ]]
+visible = false
 margin_left = 84.0
 margin_right = 320.0
 margin_bottom = 70.0
