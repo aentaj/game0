@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://escenas/menu_Casas.tscn" type="PackedScene" id=2]
+[ext_resource path="res://escenas/interface_escenas/menu_fabricas.tscn" type="PackedScene" id=1]
+[ext_resource path="res://escenas/interface_escenas/menu_Casas.tscn" type="PackedScene" id=2]
 
 [node name="GUI" type="Control"]
 anchor_right = 1.0
@@ -13,29 +14,17 @@ __meta__ = {
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -292.0
+margin_top = -144.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="menu_Casas" parent="VBoxContainer" instance=ExtResource( 2 )]
+[node name="menu_casas" parent="VBoxContainer" instance=ExtResource( 2 )]
 anchor_right = 0.0
 margin_right = 1024.0
 
-[node name="menu_Casas2" parent="VBoxContainer" instance=ExtResource( 2 )]
+[node name="menu_fabricas" parent="VBoxContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0
 margin_top = 74.0
 margin_right = 1024.0
 margin_bottom = 144.0
-
-[node name="menu_Casas3" parent="VBoxContainer" instance=ExtResource( 2 )]
-anchor_right = 0.0
-margin_top = 148.0
-margin_right = 1024.0
-margin_bottom = 218.0
-
-[node name="menu_Casas4" parent="VBoxContainer" instance=ExtResource( 2 )]
-anchor_right = 0.0
-margin_top = 222.0
-margin_right = 1024.0
-margin_bottom = 292.0

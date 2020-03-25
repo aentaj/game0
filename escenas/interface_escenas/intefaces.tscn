@@ -1,26 +1,18 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://textures/house_3 icon.png" type="Texture" id=1]
-[ext_resource path="res://textures/house_2 icon.png" type="Texture" id=2]
-[ext_resource path="res://textures/House_image_icon.png" type="Texture" id=3]
-[ext_resource path="res://textures/house_1 icon.png" type="Texture" id=4]
-[ext_resource path="res://codigos_CSHARP/InterfaceObjetos.cs" type="Script" id=5]
-[ext_resource path="res://escenas/models_Scene/house_2.tscn" type="PackedScene" id=6]
-[ext_resource path="res://escenas/models_Scene/house_1.tscn" type="PackedScene" id=7]
-[ext_resource path="res://escenas/models_Scene/house_3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://codigos_CSHARP/InterfaceObjetos.cs" type="Script" id=1]
+[ext_resource path="res://textures/X.png" type="Texture" id=2]
 
 
-[node name="menu_Casas" type="HBoxContainer" groups=[
+[node name="interfaces" type="HBoxContainer" groups=[
 "menu_Casas",
 ]]
 anchor_right = 1.0
 margin_bottom = 70.0
-script = ExtResource( 5 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-edificios = [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ) ]
-RayoDistancia = 5000
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_bottom = 70.0
@@ -37,7 +29,7 @@ margin_bottom = 70.0
 [node name="Button" type="Button" parent="HBoxContainer"]
 margin_right = 76.0
 margin_bottom = 70.0
-icon = ExtResource( 3 )
+icon = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -45,6 +37,7 @@ __meta__ = {
 [node name="edificios" type="HBoxContainer" parent="." groups=[
 "edificios",
 ]]
+visible = false
 margin_left = 84.0
 margin_right = 320.0
 margin_bottom = 70.0
@@ -52,7 +45,7 @@ margin_bottom = 70.0
 [node name="Button2" type="Button" parent="edificios"]
 margin_right = 76.0
 margin_bottom = 70.0
-icon = ExtResource( 4 )
+icon = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -71,7 +64,7 @@ __meta__ = {
 margin_left = 160.0
 margin_right = 236.0
 margin_bottom = 70.0
-icon = ExtResource( 1 )
+icon = ExtResource( 2 )
 [connection signal="button_down" from="HBoxContainer/Button" to="." method="_on_Button_button_down"]
 [connection signal="button_down" from="edificios/Button2" to="." method="_on_Button2_button_down"]
 [connection signal="button_down" from="edificios/Button3" to="." method="_on_Button3_button_down"]

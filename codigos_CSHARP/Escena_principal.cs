@@ -25,7 +25,7 @@ public class Escena_principal : Spatial
     private Spatial mosaico;
     Vector2 rotar = new Vector2();
     public int camara_elegida = 0;
-    private interfaceObjetos interfaceObjetos;//accedo al nodo interface objeto
+    private MenuCasas interfaceObjetos;//accedo al nodo interface objeto
 
     //public static var script_global_cSharp = (script_global_cSharp)GetNode("/root/script_global_cSharp");
 
@@ -46,7 +46,7 @@ public class Escena_principal : Spatial
         Camera_vista_media = (Camera)GetTree().GetNodesInGroup("Camera_vista_media")[0];
         Camera_aguila = (Camera)GetTree().GetNodesInGroup("Camera_aguila")[0];
         forma1();
-        interfaceObjetos = (interfaceObjetos)GetTree().GetNodesInGroup("menu_Casas")[0];
+        interfaceObjetos = (MenuCasas)GetTree().GetNodesInGroup("menu_Casas")[0];
     }
 
 

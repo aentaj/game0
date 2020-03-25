@@ -2,19 +2,19 @@ using Godot;
 using Godot.Collections;
 using System;
 
-public class interfaceObjetos : Control
+public class InterfaceObjetos : Control
 {
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
     
     [Export]
-    private Array<PackedScene> edificios = new Array<PackedScene>();
-    private Camera Camera_aguila,Camera_superior,Camera_vista_media;//para precargar las camaras
-    private Spatial edificioInstanciado;
-    private Spatial building;
-    private Control MenuCasas;//referencia al poput menu
-    private bool InstanciarCasa = false;
+    public Array<PackedScene> edificios = new Array<PackedScene>();
+    public Camera Camera_aguila,Camera_superior,Camera_vista_media;//para precargar las camaras
+    public Spatial edificioInstanciado;
+    public Spatial building;
+    public Control MenuCasas;//referencia al poput menu
+    public bool InstanciarCasa = false;
     //private Vector3 posicionNuevaCasa;
 
 
@@ -27,11 +27,11 @@ public class interfaceObjetos : Control
     //private Godot.Collections.Array intercepto = new Godot.Collections.Array { };
 
     public string CamaraActiva;//para saber cual es la camara activa
-    private Camera camaraActual;//la camara actual activa
-    private Vector3 origen;
-    private Vector3 destino;
-    private PhysicsDirectSpaceState espacio;
-    private Dictionary intercepto;
+    public Camera camaraActual;//la camara actual activa
+    public Vector3 origen;
+    public Vector3 destino;
+    public PhysicsDirectSpaceState espacio;
+    public Dictionary intercepto;
     /////////////////////////////////////////////////////////////////
 
     public override void _Ready()
@@ -104,7 +104,7 @@ public class interfaceObjetos : Control
     }
 
 
-    private void instanciarEdificio(int escena)//resibo por parametro la escena que voy a instanciar al llamar a esta función,comienza con 0
+    public void instanciarEdificio(int escena)//resibo por parametro la escena que voy a instanciar al llamar a esta función,comienza con 0
     {
         InstanciarCasa = true;
         edificioInstanciado = (Spatial)edificios[escena].Instance();//instancio el edificio que esta en el indice 0
@@ -123,7 +123,7 @@ public class interfaceObjetos : Control
 
 
 
-    private void MoverEdificioInstanciado() //funcion para tirar un rayo desde la camara y determinar la posición  del mouse con respecto a la camara
+    public void MoverEdificioInstanciado() //funcion para tirar un rayo desde la camara y determinar la posición  del mouse con respecto a la camara
     {  
         //GD.Print("estoy en la función mover edificio instanciado");
         if(CamaraActiva == "Camera_aguila")

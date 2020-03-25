@@ -53,13 +53,12 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    
-
     <Compile Include="codigos_CSHARP\Escena_principal.cs" />
-    <Compile Include="codigos_CSHARP\interfaceObjetos.cs" />
+    <Compile Include="codigos_CSHARP\InterfaceObjetos.cs" />
+    <Compile Include="codigos_CSHARP\MenuCasas.cs" />
+    <Compile Include="codigos_CSHARP\MenuFabricas.cs" />
     <Compile Include="codigos_CSHARP\script_global_cSharp.cs" />
     <Compile Include="codigos_CSHARP\mosaico.cs" />
-
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
