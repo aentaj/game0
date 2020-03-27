@@ -34,7 +34,8 @@ public class InterfaceObjetos : Control
     public Dictionary intercepto;
     /////////////////////////////////////////////////////////////////
 
-    public override void _Ready()
+    //esto lo sobreescribo en cada clase instanciada
+    /*public override void _Ready()
     {
         MenuCasas = (Control)GetTree().GetNodesInGroup("edificios")[0];//como el popupmenu es el segundo el indice es 1
         building = (Spatial)GetTree().GetNodesInGroup("building")[0];//busco el nodo donde se crearan los edificios
@@ -43,19 +44,40 @@ public class InterfaceObjetos : Control
         Camera_superior = ((Camera)GetTree().GetNodesInGroup("Camera_superior")[0]);//guardo la camara
         Camera_vista_media = ((Camera)GetTree().GetNodesInGroup("Camera_vista_media")[0]);//guardo la camara
         CamaraActiva = GetViewport().GetCamera().Name;//tomo la camara activa del viewport
+    }*/
+        
+
+
+    /*private void _on_Button2_button_down()
+    {  
+        GD.Print("presione el primer boton");
+        instanciarEdificio(0);//si presiono este boton instancio la casa que esta en el indice 0
     }
-        
-        
+
+
+    private void _on_Button3_button_down()
+    {  
+        GD.Print("presione segundo boton");
+        instanciarEdificio(1);//si presiono este boton instancio la casa que esta en el indice 0
+    }
+
+
+    private void _on_Button4_button_down()
+    {  
+        GD.Print("presione el tercer boton");
+        instanciarEdificio(2);//si presiono este boton instancio la casa que esta en el indice 0
+    }*/    
         
         
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
+// Called every frame. 'delta' is the elapsed time since the previous frame.
    public override void _Process(float delta)
    {
-        //CamaraActiva = GetViewport().GetCamera().Name;//tomo la camara activa del viewport
+        CamaraActiva = GetViewport().GetCamera().Name;//tomo la camara activa del viewport
         if(InstanciarCasa)
         {
             MoverEdificioInstanciado();
+            //CamaraActiva = GetViewport().GetCamera().Name;
             if(Input.IsActionJustPressed("click_derecho"))
             {
                 InstanciarCasa = false;
@@ -79,30 +101,7 @@ public class InterfaceObjetos : Control
         );
     }
 
-
-    private void _on_Button2_button_down()
-    {  
-        GD.Print("presione el primer boton");
-        instanciarEdificio(0);//si presiono este boton instancio la casa que esta en el indice 0
-        MenuCasas.Visible = false;//hace invisible el menu
-    }
-
-
-    private void _on_Button3_button_down()
-    {  
-        GD.Print("presione segundo boton");
-        instanciarEdificio(1);//si presiono este boton instancio la casa que esta en el indice 0
-         MenuCasas.Visible = false;//hace invisible el menu
-    }
-
-
-    private void _on_Button4_button_down()
-    {  
-        GD.Print("presione el tercer boton");
-        instanciarEdificio(2);//si presiono este boton instancio la casa que esta en el indice 0
-        MenuCasas.Visible = false;//hace invisible el menu
-    }
-
+    
 
     public void instanciarEdificio(int escena)//resibo por parametro la escena que voy a instanciar al llamar a esta función,comienza con 0
     {
@@ -110,19 +109,10 @@ public class InterfaceObjetos : Control
         edificioInstanciado = (Spatial)edificios[escena].Instance();//instancio el edificio que esta en el indice 0
         building.AddChild(edificioInstanciado);//agrego como nodo hijo
         //await ToSignal(GetTree().CreateTimer(2.0f),"timeout");
+        MenuCasas.Visible = false;//hace invisible el menu
     }    
         
-
-    /*public override void _Input(InputEvent @event)
-    {
-        if(@event is InputEventMouseMotion evento)
-        {
-             
-        }
-    }*/
-
-
-
+        
     public void MoverEdificioInstanciado() //funcion para tirar un rayo desde la camara y determinar la posición  del mouse con respecto a la camara
     {  
         //GD.Print("estoy en la función mover edificio instanciado");

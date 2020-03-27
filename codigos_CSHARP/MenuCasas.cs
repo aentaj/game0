@@ -14,6 +14,7 @@ public class MenuCasas : InterfaceObjetos
         Camera_superior = ((Camera)GetTree().GetNodesInGroup("Camera_superior")[0]);//guardo la camara
         Camera_vista_media = ((Camera)GetTree().GetNodesInGroup("Camera_vista_media")[0]);//guardo la camara
         CamaraActiva = GetViewport().GetCamera().Name;//tomo la camara activa del viewport
+    
     }
         
         
@@ -23,7 +24,7 @@ public class MenuCasas : InterfaceObjetos
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
    public override void _Process(float delta)
    {
-        //CamaraActiva = GetViewport().GetCamera().Name;//tomo la camara activa del viewport
+        CamaraActiva = GetViewport().GetCamera().Name;//tomo la camara activa del viewport
         if(InstanciarCasa)
         {
             MoverEdificioInstanciado();
@@ -55,7 +56,6 @@ public class MenuCasas : InterfaceObjetos
     {  
         GD.Print("presione el primer boton");
         instanciarEdificio(0);//si presiono este boton instancio la casa que esta en el indice 0
-        MenuCasas.Visible = false;//hace invisible el menu
     }
 
 
@@ -63,7 +63,6 @@ public class MenuCasas : InterfaceObjetos
     {  
         GD.Print("presione segundo boton");
         instanciarEdificio(1);//si presiono este boton instancio la casa que esta en el indice 0
-         MenuCasas.Visible = false;//hace invisible el menu
     }
 
 
@@ -71,7 +70,6 @@ public class MenuCasas : InterfaceObjetos
     {  
         GD.Print("presione el tercer boton");
         instanciarEdificio(2);//si presiono este boton instancio la casa que esta en el indice 0
-        MenuCasas.Visible = false;//hace invisible el menu
     }
 
 }
