@@ -25,7 +25,7 @@ public class Escena_principal : Spatial
     private Spatial mosaico;
     Vector2 rotar = new Vector2();
     public int camara_elegida = 0;
-    private MenuCasas interfaceObjetos;//accedo al nodo interface objeto
+    private MenuCasas menu;//accedo al nodo menu
 
     //public static var script_global_cSharp = (script_global_cSharp)GetNode("/root/script_global_cSharp");
 
@@ -46,7 +46,7 @@ public class Escena_principal : Spatial
         Camera_vista_media = (Camera)GetTree().GetNodesInGroup("Camera_vista_media")[0];
         Camera_aguila = (Camera)GetTree().GetNodesInGroup("Camera_aguila")[0];
         forma1();
-        interfaceObjetos = (MenuCasas)GetTree().GetNodesInGroup("menu_Casas")[0];
+        menu = (MenuCasas)GetTree().GetNodesInGroup("menu")[0];//busca la casa para saber que camara esta activa
     }
 
 
@@ -110,21 +110,21 @@ public class Escena_principal : Spatial
             switch (camara_elegida)
             {
                 case 0:
-                    interfaceObjetos.CamaraActiva = "Camera_aguila";//variable global que receibo de interface
+                    //menu.CamaraActiva = "Camera_aguila";//variable global que receibo de interface
                     Camera_aguila.Current = true;
                     Camera_superior.Current = false;
                     Camera_vista_media.Current = false;
                     return;
 
                 case 1:
-                    interfaceObjetos.CamaraActiva = "Camera_superior";//variable global que receibo de interface
+                    //menu.CamaraActiva = "Camera_superior";//variable global que receibo de interface
                     Camera_aguila.Current = false;
                     Camera_superior.Current = true;
                     Camera_vista_media.Current = false;
                     return;
 
                 case 2:
-                    interfaceObjetos.CamaraActiva = "Camera_vista_media";//variable global que receibo de interface
+                    //menu.CamaraActiva = "Camera_vista_media";//variable global que receibo de interface
                     Camera_aguila.Current = false;
                     Camera_superior.Current = false;
                     Camera_vista_media.Current = true;

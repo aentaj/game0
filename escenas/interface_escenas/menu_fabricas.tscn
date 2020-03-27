@@ -1,13 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://textures/factory.png" type="Texture" id=1]
+[ext_resource path="res://escenas/models_Scene/factory.tscn" type="PackedScene" id=2]
+[ext_resource path="res://escenas/models_Scene/refinery.tscn" type="PackedScene" id=3]
+[ext_resource path="res://escenas/models_Scene/farm.tscn" type="PackedScene" id=4]
 [ext_resource path="res://codigos_CSHARP/MenuFabricas.cs" type="Script" id=5]
 [ext_resource path="res://textures/farm icon.png" type="Texture" id=6]
 [ext_resource path="res://textures/refinery.png" type="Texture" id=7]
 [ext_resource path="res://textures/menuFabrica.png" type="Texture" id=8]
 
 [node name="menu_fabricas" type="HBoxContainer" groups=[
-"menu_Casas",
+"menu",
 ]]
 anchor_right = 1.0
 margin_bottom = 70.0
@@ -15,6 +18,7 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+edificios = [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_bottom = 70.0
