@@ -144,7 +144,7 @@ public class InterfaceObjetos : Control
         if(intercepto.Contains("position"))//si el diccionario tiene esa clave
         {
             edificioInstanciado.Translation = (Vector3)intercepto["position"];//guardo la posición del mouse
-            GD.Print(intercepto["position"]);//imprimo por pantalla la ubicación del mouse donde intercepto dependiendo la Cámara
+            //GD.Print(intercepto["position"]);//imprimo por pantalla la ubicación del mouse donde intercepto dependiendo la Cámara
         }    
     }
         

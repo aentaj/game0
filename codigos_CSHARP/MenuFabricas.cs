@@ -52,21 +52,21 @@ public class MenuFabricas : InterfaceObjetos
 
     private void _on_Button2_button_down()
     {  
-        GD.Print("presione el primer boton");
+        //GD.Print("presione el primer boton");
         instanciarEdificio(0);//si presiono este boton instancio la casa que esta en el indice 0
     }
 
 
     private void _on_Button3_button_down()
     {  
-        GD.Print("presione segundo boton");
+        //GD.Print("presione segundo boton");
         instanciarEdificio(1);//si presiono este boton instancio la casa que esta en el indice 0
     }
 
 
     private void _on_Button4_button_down()
     {  
-        GD.Print("presione el tercer boton");
+        //GD.Print("presione el tercer boton");
         instanciarEdificio(2);//si presiono este boton instancio la casa que esta en el indice 0
     }
         
