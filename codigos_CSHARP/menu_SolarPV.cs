@@ -1,11 +1,9 @@
 using Godot;
-using Godot.Collections;
 using System;
 
-public class MenuFabricas : InterfaceObjetos
+public class menu_SolarPV : InterfaceObjetos
 {
-   
-    public override void _Ready()
+     public override void _Ready()
     {
         MenuCasas = GetNode<Control>("edificios");//Esto busca el nodo que tiene como hijos los botones que instancian objetos
         building = (Spatial)GetTree().GetNodesInGroup("building")[0];//busco el nodo donde se crearan los edificios que se encuentra en la escena principal
@@ -47,7 +45,6 @@ public class MenuFabricas : InterfaceObjetos
             MenuCasas.Visible = false; //hago invisible
         } 
 
-        
         //cambio la posición del POPUPMENU
         MenuCasas.SetPosition(new Vector2
             ( //la posición del menu es relativo al boton
@@ -79,4 +76,3 @@ public class MenuFabricas : InterfaceObjetos
     }
         
 }
-        

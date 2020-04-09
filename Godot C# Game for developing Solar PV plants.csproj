@@ -57,6 +57,8 @@
     <Compile Include="codigos_CSHARP\InterfaceObjetos.cs" />
     <Compile Include="codigos_CSHARP\MenuCasas.cs" />
     <Compile Include="codigos_CSHARP\MenuFabricas.cs" />
+    <Compile Include="codigos_CSHARP\menu_SolarPV.cs" />
+    <Compile Include="codigos_CSHARP\resourcesHBoxContainer.cs" />
     <Compile Include="codigos_CSHARP\script_global_cSharp.cs" />
     <Compile Include="codigos_CSHARP\mosaico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
