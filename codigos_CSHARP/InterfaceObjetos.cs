@@ -110,6 +110,12 @@ public class InterfaceObjetos : Control
         building.AddChild(edificioInstanciado);//agrego como nodo hijo
         //await ToSignal(GetTree().CreateTimer(2.0f),"timeout");
         MenuCasas.Visible = false;//hace invisible el menu
+
+    }
+
+    public void MenuInvisible()
+    {
+        MenuCasas.Visible = false;//hace invisible el menu
     }    
         
         
