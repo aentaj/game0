@@ -110,6 +110,12 @@ public class InterfaceObjetos : Control
         building.AddChild(edificioInstanciado);//agrego como nodo hijo
         //await ToSignal(GetTree().CreateTimer(2.0f),"timeout");
         MenuCasas.Visible = false;//hace invisible el menu
+
+    }
+
+    public void MenuInvisible()
+    {
+        MenuCasas.Visible = false;//hace invisible el menu
     }    
         
         
@@ -144,7 +150,7 @@ public class InterfaceObjetos : Control
         if(intercepto.Contains("position"))//si el diccionario tiene esa clave
         {
             edificioInstanciado.Translation = (Vector3)intercepto["position"];//guardo la posición del mouse
-            GD.Print(intercepto["position"]);//imprimo por pantalla la ubicación del mouse donde intercepto dependiendo la Cámara
+            //GD.Print(intercepto["position"]);//imprimo por pantalla la ubicación del mouse donde intercepto dependiendo la Cámara
         }    
     }
         

@@ -1,12 +1,13 @@
 using Godot;
-using Godot.Collections;
 using System;
 
-public class MenuFabricas : InterfaceObjetos
+public class menu_SolarPV : InterfaceObjetos
 {
-   
-    public override void _Ready()
+    private resourcesHBoxContainer resourcesHBoxContainer;//para buscar las variables que contienen los nodos en esta clase
+    
+     public override void _Ready()
     {
+        resourcesHBoxContainer = (resourcesHBoxContainer)GetTree().GetNodesInGroup("resourcesHBoxContainer")[0];
         MenuCasas = GetNode<Control>("edificios");//Esto busca el nodo que tiene como hijos los botones que instancian objetos
         building = (Spatial)GetTree().GetNodesInGroup("building")[0];//busco el nodo donde se crearan los edificios que se encuentra en la escena principal
         //precargo las camaras
@@ -47,7 +48,6 @@ public class MenuFabricas : InterfaceObjetos
             MenuCasas.Visible = false; //hago invisible
         } 
 
-        
         //cambio la posición del POPUPMENU
         MenuCasas.SetPosition(new Vector2
             ( //la posición del menu es relativo al boton
@@ -58,10 +58,19 @@ public class MenuFabricas : InterfaceObjetos
     }
 
 
-    private void _on_Button2_button_down()
+    private void _on_Button2_button_down()//si presiono este boton
     {  
-        //GD.Print("presione el primer boton");
-        instanciarEdificio(0);//si presiono este boton instancio la casa que esta en el indice 0
+        if(Convert.ToInt16(resourcesHBoxContainer.ScoreSilicon.Text) > 0)//si el texto en pantalla ScoreSilicon es mayor a 0
+        {
+            //GD.Print("presione el primer boton");
+            instanciarEdificio(0);//si presiono este boton instancio la casa que esta en el indice 0
+            resourcesHBoxContainer.ScoreSilicon.Text = (Convert.ToInt16(resourcesHBoxContainer.ScoreSilicon.Text) - 1).ToString(); 
+            resourcesHBoxContainer.cantidadDePaneles += 10;//sumo un panel solar
+        }
+        else//si es menor a cero 
+        {
+            MenuInvisible();//hace invisible el menu
+        }
     }
 
 
@@ -79,4 +88,3 @@ public class MenuFabricas : InterfaceObjetos
     }
         
 }
-        

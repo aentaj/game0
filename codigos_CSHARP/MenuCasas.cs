@@ -17,9 +17,7 @@ public class MenuCasas : InterfaceObjetos
     
     }
         
-        
-        
-        
+               
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
    public override void _Process(float delta)
@@ -38,10 +36,18 @@ public class MenuCasas : InterfaceObjetos
        //GD.Print(GetGlobalMousePosition());  
    }
 
-    private void _on_Button_button_down()
+    private void _on_Button_button_down()//si presiono el boton
     {
-        MenuCasas.Visible = true;//hace visible y invisible el poput menu
+        if(MenuCasas.Visible == false) //si el menu NO esta visible
+        {
+            MenuCasas.Visible = true;//hace visible el menu
+        }
+        else //si el menu esta visible
+        {
+            MenuCasas.Visible = false; //hago invisible
+        } 
         
+        //GD.Print("presione el boton");
         //cambio la posición del POPUPMENU
         MenuCasas.SetPosition(new Vector2
             ( //la posición del menu es relativo al boton
@@ -54,22 +60,24 @@ public class MenuCasas : InterfaceObjetos
 
     private void _on_Button2_button_down()
     {  
-        GD.Print("presione el primer boton");
+        //GD.Print("presione el primer boton");
         instanciarEdificio(0);//si presiono este boton instancio la casa que esta en el indice 0
     }
 
 
     private void _on_Button3_button_down()
     {  
-        GD.Print("presione segundo boton");
+        //GD.Print("presione segundo boton");
         instanciarEdificio(1);//si presiono este boton instancio la casa que esta en el indice 0
     }
 
 
     private void _on_Button4_button_down()
     {  
-        GD.Print("presione el tercer boton");
+        //GD.Print("presione el tercer boton");
         instanciarEdificio(2);//si presiono este boton instancio la casa que esta en el indice 0
     }
+
+
 
 }

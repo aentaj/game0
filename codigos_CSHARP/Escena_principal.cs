@@ -46,7 +46,7 @@ public class Escena_principal : Spatial
         Camera_vista_media = (Camera)GetTree().GetNodesInGroup("Camera_vista_media")[0];
         Camera_aguila = (Camera)GetTree().GetNodesInGroup("Camera_aguila")[0];
         forma1();
-        menu = (MenuCasas)GetTree().GetNodesInGroup("menu")[0];//busca la casa para saber que camara esta activa
+        //menu = (MenuCasas)GetTree().GetNodesInGroup("menu")[0];//busca la casa para saber que camara esta activa
     }
 
 
