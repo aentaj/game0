@@ -29,9 +29,15 @@ public class resourcesHBoxContainer : HBoxContainer
 //      
 //  }
 
-    private void _on_TimerEnergy_timeout()//cuando termino el tiempo en el NodoTimer de energía
+    private void _on_TimerEnergy_timeout()//Este timer es para aumentar la energía..cuando termino el tiempo en el NodoTimer de energía
     {
-        ScoreEnergy.Text = (Convert.ToInt16(ScoreEnergy.Text) + cantidadDePaneles).ToString();//aumento la cantidad de energía
+        ScoreEnergy.Text = (
+            Convert.ToInt16(ScoreEnergy.Text) + (cantidadDePaneles * 3)).ToString();//aumento la cantidad de energía dependiendo la cantidad de paneles solares el 3 significa que cada panel puede alimentar 3 ciudades
+    }
+
+    private void _on_TimerCasas_timeout()//este timer es para restar energía dependiendo la cantidad de casas que hay en la escena
+    {
+        ScoreEnergy.Text = (Convert.ToInt16(ScoreEnergy.Text) - 1).ToString();//aumento la cantidad de energía
     }
 
 }

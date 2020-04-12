@@ -251,7 +251,11 @@ text = "10"
 align = 1
 
 [node name="TimerEnergy" type="Timer" parent="MarginContainer/resourcesHBoxContainer"]
-wait_time = 3.0
+wait_time = 5.0
+autostart = true
+
+[node name="TimerCasas" type="Timer" parent="MarginContainer/resourcesHBoxContainer"]
+wait_time = 4.0
 autostart = true
 
 [node name="MenuVBoxContainer" type="VBoxContainer" parent="MarginContainer"]
@@ -279,3 +283,4 @@ margin_top = 510.0
 margin_right = 1012.0
 margin_bottom = 580.0
 [connection signal="timeout" from="MarginContainer/resourcesHBoxContainer/TimerEnergy" to="MarginContainer/resourcesHBoxContainer" method="_on_TimerEnergy_timeout"]
+[connection signal="timeout" from="MarginContainer/resourcesHBoxContainer/TimerCasas" to="MarginContainer/resourcesHBoxContainer" method="_on_TimerCasas_timeout"]

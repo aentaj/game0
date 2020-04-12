@@ -36,27 +36,14 @@ public class MenuCasas : InterfaceObjetos
        //GD.Print(GetGlobalMousePosition());  
    }
 
-    private void _on_Button_button_down()//si presiono el boton
+    private void _on_Button_button_down()//si presiono el boton muestro el menu
     {
-        if(MenuCasas.Visible == false) //si el menu NO esta visible
-        {
-            MenuCasas.Visible = true;//hace visible el menu
-        }
-        else //si el menu esta visible
-        {
-            MenuCasas.Visible = false; //hago invisible
-        } 
+        OcultaryHacerVisibleMenu();//esto hace que el menu sea o no sea visible dependiendo su estado
+        PosicionarPoputMenu();//la posición del menu es relativo al boton
         
-        //GD.Print("presione el boton");
-        //cambio la posición del POPUPMENU
-        MenuCasas.SetPosition(new Vector2
-            ( //la posición del menu es relativo al boton
-            MenuCasas.RectPosition.x,//la posición en x es la misma
-            this.RectGlobalPosition.y//posicion global en y donde esta situado el padre de los nodos
-            )
-        );
     }
 
+   //////Esto son los botones que estan dentro del menu//////////////
 
     private void _on_Button2_button_down()
     {  

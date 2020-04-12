@@ -22,7 +22,8 @@ public class MenuFabricas : InterfaceObjetos
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
    public override void _Process(float delta)
    {
-        CamaraActiva = GetViewport().GetCamera().Name;//tomo la camara activa del viewport
+        CamaraActiva = GetViewport().GetCamera().Name;//tomo la camara activa del viewport esto es provisorio por el momento
+        
         if(InstanciarCasa)
         {
             MoverEdificioInstanciado();
@@ -36,27 +37,13 @@ public class MenuFabricas : InterfaceObjetos
        //GD.Print(GetGlobalMousePosition());  
    }
 
-    private void _on_Button_button_down()//si presiono el boton
+    private void _on_Button_button_down()//si presiono el boton muestro el menu
     {
-        if(MenuCasas.Visible == false) //si el menu NO esta visible
-        {
-            MenuCasas.Visible = true;//hace visible el menu
-        }
-        else //si el menu esta visible
-        {
-            MenuCasas.Visible = false; //hago invisible
-        } 
-
-        
-        //cambio la posición del POPUPMENU
-        MenuCasas.SetPosition(new Vector2
-            ( //la posición del menu es relativo al boton
-            MenuCasas.RectPosition.x,//la posición en x es la misma
-            this.RectGlobalPosition.y//posicion global en y donde esta situado el padre de los nodos
-            )
-        );
+        OcultaryHacerVisibleMenu();//esto hace que el menu sea o no sea visible dependiendo su estado
+        PosicionarPoputMenu();//la posición del menu es relativo al boton
     }
-
+        
+    //////Esto son los botones que estan dentro del menu//////////////
 
     private void _on_Button2_button_down()
     {  
