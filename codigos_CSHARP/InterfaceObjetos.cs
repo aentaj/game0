@@ -2,6 +2,8 @@ using Godot;
 using Godot.Collections;
 using System;
 
+
+
 public class InterfaceObjetos : Control
 {
     // Declare member variables here. Examples:
@@ -10,26 +12,27 @@ public class InterfaceObjetos : Control
     
     [Export]
     public Array<PackedScene> edificios = new Array<PackedScene>();
-    public Camera Camera_aguila,Camera_superior,Camera_vista_media;//para precargar las camaras
-    public Spatial edificioInstanciado;
-    public Spatial building;
+    public Spatial edificioInstanciado, building;
     public Control MenuCasas;//referencia al poput menu
     public bool InstanciarCasa = false;
     //private Vector3 posicionNuevaCasa;
+
+    public resourcesHBoxContainer resourcesHBoxContainer;//para buscar las variables que contienen los nodos en esta clase
+
 
 
     //TODO ESTO ES RELACIONADO A LA CAMARA MUY IMPORTANTE
     [Export]
     int RayoDistancia = 1000;
     // Called when the node enters the scene tree for the first time.
+    public Camera Camera_aguila,Camera_superior,Camera_vista_media,camaraActual;//para precargar las camaras
 
     //private Godot.Collections.Dictionary intercepto = new Godot.Collections.Dictionary(); //diccionario global que guarda las posiciones donde esta el mouse
     //private Godot.Collections.Array intercepto = new Godot.Collections.Array { };
 
     public string CamaraActiva;//para saber cual es la camara activa
-    public Camera camaraActual;//la camara actual activa
-    public Vector3 origen;
-    public Vector3 destino;
+    public Vector3 origen,destino;
+
     public PhysicsDirectSpaceState espacio;
     public Dictionary intercepto;
     /////////////////////////////////////////////////////////////////
@@ -113,11 +116,7 @@ public class InterfaceObjetos : Control
 
     }
 
-    public void MenuInvisible()
-    {
-        MenuCasas.Visible = false;//hace invisible el menu
-    }    
-        
+
         
     public void MoverEdificioInstanciado() //funcion para tirar un rayo desde la camara y determinar la posición  del mouse con respecto a la camara
     {  
@@ -152,6 +151,35 @@ public class InterfaceObjetos : Control
             edificioInstanciado.Translation = (Vector3)intercepto["position"];//guardo la posición del mouse
             //GD.Print(intercepto["position"]);//imprimo por pantalla la ubicación del mouse donde intercepto dependiendo la Cámara
         }    
+    }
+
+    public void MenuInvisible()
+    {
+        MenuCasas.Visible = false;//hace invisible el menu
+    }    
+        
+
+    public void OcultaryHacerVisibleMenu()//hace que el menu sea visible y invisible si presiono el boton
+    {
+        if(MenuCasas.Visible == false) //si el menu NO esta visible
+        {
+            MenuCasas.Visible = true;//hace visible el menu
+        }
+        else //si el menu esta visible
+        {
+            MenuCasas.Visible = false; //hago invisible
+        } 
+    }
+
+    public void PosicionarPoputMenu()//la posición del menu es relativo al boton
+    {
+        //cambio la posición del POPUPMENU
+        MenuCasas.SetPosition(new Vector2
+            ( //la posición del menu es relativo al boton
+            MenuCasas.RectPosition.x,//la posición en x es la misma
+            this.RectGlobalPosition.y//posicion global en y donde esta situado el padre de los nodos
+            )
+        );
     }
         
 }

@@ -3,9 +3,10 @@ using System;
 
 public class menu_SolarPV : InterfaceObjetos
 {
-    private resourcesHBoxContainer resourcesHBoxContainer;//para buscar las variables que contienen los nodos en esta clase
-    
-     public override void _Ready()
+    private int cantidadDePaneles = 0;
+    private int tipoPanel = 0;
+
+    public override void _Ready()
     {
         resourcesHBoxContainer = (resourcesHBoxContainer)GetTree().GetNodesInGroup("resourcesHBoxContainer")[0];
         MenuCasas = GetNode<Control>("edificios");//Esto busca el nodo que tiene como hijos los botones que instancian objetos
@@ -29,6 +30,8 @@ public class menu_SolarPV : InterfaceObjetos
             MoverEdificioInstanciado();
             if(Input.IsActionJustPressed("click_derecho"))
             {
+                resourcesHBoxContainer.energiaDePaneles = cantidadDePaneles + tipoPanel;//sumo un panel solar si se instancio
+                cantidadDePaneles += 1;
                 InstanciarCasa = false;
             }
         }    
@@ -37,40 +40,20 @@ public class menu_SolarPV : InterfaceObjetos
        //GD.Print(GetGlobalMousePosition());  
    }
 
-    private void _on_Button_button_down()//si presiono el boton
-    {
-        if(MenuCasas.Visible == false) //si el menu NO esta visible
-        {
-            MenuCasas.Visible = true;//hace visible el menu
-        }
-        else //si el menu esta visible
-        {
-            MenuCasas.Visible = false; //hago invisible
-        } 
 
-        //cambio la posición del POPUPMENU
-        MenuCasas.SetPosition(new Vector2
-            ( //la posición del menu es relativo al boton
-            MenuCasas.RectPosition.x,//la posición en x es la misma
-            this.RectGlobalPosition.y//posicion global en y donde esta situado el padre de los nodos
-            )
-        );
+    private void _on_Button_button_down()//si presiono el boton muestro el menu
+    {
+        OcultaryHacerVisibleMenu();//esto hace que el menu sea o no sea visible dependiendo su estado
+        PosicionarPoputMenu();//la posición del menu es relativo al boton
     }
 
+   //////Esto son los botones que estan dentro del menu//////////////
 
-    private void _on_Button2_button_down()//si presiono este boton
+    private void _on_Button2_button_down()
     {  
-        if(Convert.ToInt16(resourcesHBoxContainer.ScoreSilicon.Text) > 0)//si el texto en pantalla ScoreSilicon es mayor a 0
-        {
-            //GD.Print("presione el primer boton");
-            instanciarEdificio(0);//si presiono este boton instancio la casa que esta en el indice 0
-            resourcesHBoxContainer.ScoreSilicon.Text = (Convert.ToInt16(resourcesHBoxContainer.ScoreSilicon.Text) - 1).ToString(); 
-            resourcesHBoxContainer.cantidadDePaneles += 10;//sumo un panel solar
-        }
-        else//si es menor a cero 
-        {
-            MenuInvisible();//hace invisible el menu
-        }
+        //GD.Print("presione el primer boton");
+        instanciarEdificio(0);//si presiono este boton instancio la casa que esta en el indice 0
+        tipoPanel = 1;
     }
 
 
@@ -78,13 +61,13 @@ public class menu_SolarPV : InterfaceObjetos
     {  
         //GD.Print("presione segundo boton");
         instanciarEdificio(1);//si presiono este boton instancio la casa que esta en el indice 0
+        tipoPanel = 4;
     }
-
 
     private void _on_Button4_button_down()
     {  
         //GD.Print("presione el tercer boton");
         instanciarEdificio(2);//si presiono este boton instancio la casa que esta en el indice 0
+        tipoPanel = 5;   
     }
-        
 }

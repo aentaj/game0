@@ -4,9 +4,13 @@ using System;
 
 public class MenuFabricas : InterfaceObjetos
 {
-   
+   private int cantidadDeFabricas = 0;
+   private int consumoFabrica = 0;
+
+
     public override void _Ready()
     {
+        resourcesHBoxContainer = (resourcesHBoxContainer)GetTree().GetNodesInGroup("resourcesHBoxContainer")[0];
         MenuCasas = GetNode<Control>("edificios");//Esto busca el nodo que tiene como hijos los botones que instancian objetos
         building = (Spatial)GetTree().GetNodesInGroup("building")[0];//busco el nodo donde se crearan los edificios que se encuentra en la escena principal
         //precargo las camaras
@@ -22,12 +26,15 @@ public class MenuFabricas : InterfaceObjetos
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
    public override void _Process(float delta)
    {
-        CamaraActiva = GetViewport().GetCamera().Name;//tomo la camara activa del viewport
+        CamaraActiva = GetViewport().GetCamera().Name;//tomo la camara activa del viewport esto es provisorio por el momento
+        
         if(InstanciarCasa)
         {
             MoverEdificioInstanciado();
             if(Input.IsActionJustPressed("click_derecho"))
             {
+                resourcesHBoxContainer.gastoDefabricas = consumoFabrica + cantidadDeFabricas;//Esto determina el gasto energético cada ves que instancio una fabrica nueva a la escena
+                cantidadDeFabricas += 1;//sumo una fabrica
                 InstanciarCasa = false;
             }
         }    
@@ -36,32 +43,19 @@ public class MenuFabricas : InterfaceObjetos
        //GD.Print(GetGlobalMousePosition());  
    }
 
-    private void _on_Button_button_down()//si presiono el boton
+    private void _on_Button_button_down()//si presiono el boton muestro el menu
     {
-        if(MenuCasas.Visible == false) //si el menu NO esta visible
-        {
-            MenuCasas.Visible = true;//hace visible el menu
-        }
-        else //si el menu esta visible
-        {
-            MenuCasas.Visible = false; //hago invisible
-        } 
-
-        
-        //cambio la posición del POPUPMENU
-        MenuCasas.SetPosition(new Vector2
-            ( //la posición del menu es relativo al boton
-            MenuCasas.RectPosition.x,//la posición en x es la misma
-            this.RectGlobalPosition.y//posicion global en y donde esta situado el padre de los nodos
-            )
-        );
+        OcultaryHacerVisibleMenu();//esto hace que el menu sea o no sea visible dependiendo su estado
+        PosicionarPoputMenu();//la posición del menu es relativo al boton
     }
-
+        
+    //////Esto son los botones que estan dentro del menu//////////////
 
     private void _on_Button2_button_down()
     {  
         //GD.Print("presione el primer boton");
         instanciarEdificio(0);//si presiono este boton instancio la casa que esta en el indice 0
+        consumoFabrica = 2;//cuanto consume este edificio instanciado
     }
 
 
@@ -69,6 +63,7 @@ public class MenuFabricas : InterfaceObjetos
     {  
         //GD.Print("presione segundo boton");
         instanciarEdificio(1);//si presiono este boton instancio la casa que esta en el indice 0
+        consumoFabrica = 4;
     }
 
 
@@ -76,6 +71,7 @@ public class MenuFabricas : InterfaceObjetos
     {  
         //GD.Print("presione el tercer boton");
         instanciarEdificio(2);//si presiono este boton instancio la casa que esta en el indice 0
+        consumoFabrica = 6;
     }
         
 }
