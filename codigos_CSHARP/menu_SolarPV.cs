@@ -3,8 +3,10 @@ using System;
 
 public class menu_SolarPV : InterfaceObjetos
 {
-    
-     public override void _Ready()
+    private int cantidadDePaneles = 0;
+    private int tipoPanel = 0;
+
+    public override void _Ready()
     {
         resourcesHBoxContainer = (resourcesHBoxContainer)GetTree().GetNodesInGroup("resourcesHBoxContainer")[0];
         MenuCasas = GetNode<Control>("edificios");//Esto busca el nodo que tiene como hijos los botones que instancian objetos
@@ -28,7 +30,8 @@ public class menu_SolarPV : InterfaceObjetos
             MoverEdificioInstanciado();
             if(Input.IsActionJustPressed("click_derecho"))
             {
-                resourcesHBoxContainer.cantidadDePaneles += 1;//sumo un panel solar si se instancio
+                resourcesHBoxContainer.energiaDePaneles = cantidadDePaneles + tipoPanel;//sumo un panel solar si se instancio
+                cantidadDePaneles += 1;
                 InstanciarCasa = false;
             }
         }    
@@ -50,7 +53,7 @@ public class menu_SolarPV : InterfaceObjetos
     {  
         //GD.Print("presione el primer boton");
         instanciarEdificio(0);//si presiono este boton instancio la casa que esta en el indice 0
-
+        tipoPanel = 1;
     }
 
 
@@ -58,13 +61,13 @@ public class menu_SolarPV : InterfaceObjetos
     {  
         //GD.Print("presione segundo boton");
         instanciarEdificio(1);//si presiono este boton instancio la casa que esta en el indice 0
+        tipoPanel = 4;
     }
-
 
     private void _on_Button4_button_down()
     {  
         //GD.Print("presione el tercer boton");
         instanciarEdificio(2);//si presiono este boton instancio la casa que esta en el indice 0
+        tipoPanel = 5;   
     }
-        
 }

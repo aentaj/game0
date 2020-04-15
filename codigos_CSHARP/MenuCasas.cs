@@ -4,9 +4,12 @@ using System;
 
 public class MenuCasas : InterfaceObjetos
 {
+    private int cantidadDeCasas =0;
+    private int consumoCasas = 0;
 
     public override void _Ready()
     {
+        resourcesHBoxContainer = (resourcesHBoxContainer)GetTree().GetNodesInGroup("resourcesHBoxContainer")[0];
         MenuCasas = GetNode<Control>("edificios");//Esto busca el nodo que tiene como hijos los botones que instancian objetos
         building = (Spatial)GetTree().GetNodesInGroup("building")[0];//busco el nodo donde se crearan los edificios que se encuentra en la escena principal
         //precargo las camaras
@@ -28,6 +31,8 @@ public class MenuCasas : InterfaceObjetos
             MoverEdificioInstanciado();
             if(Input.IsActionJustPressed("click_derecho"))
             {
+                resourcesHBoxContainer.gastoDeCasas = consumoCasas + cantidadDeCasas;//Esto determina el gasto energético cada ves que instancio una casa nueva a la escena
+                cantidadDeCasas += 1;//sumo una casa
                 InstanciarCasa = false;
             }
         }    
@@ -49,6 +54,7 @@ public class MenuCasas : InterfaceObjetos
     {  
         //GD.Print("presione el primer boton");
         instanciarEdificio(0);//si presiono este boton instancio la casa que esta en el indice 0
+        consumoCasas = 1;
     }
 
 
@@ -56,15 +62,15 @@ public class MenuCasas : InterfaceObjetos
     {  
         //GD.Print("presione segundo boton");
         instanciarEdificio(1);//si presiono este boton instancio la casa que esta en el indice 0
+        consumoCasas = 2;
     }
-
 
     private void _on_Button4_button_down()
     {  
         //GD.Print("presione el tercer boton");
         instanciarEdificio(2);//si presiono este boton instancio la casa que esta en el indice 0
+        consumoCasas = 3;
     }
-
 
 
 }
