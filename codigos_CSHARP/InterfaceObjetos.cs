@@ -31,7 +31,7 @@ public class InterfaceObjetos : Control
     //private Godot.Collections.Array intercepto = new Godot.Collections.Array { };
 
     public string CamaraActiva;//para saber cual es la camara activa
-    public Vector3 origen,destino;
+    public Vector3 origen,destino,posicionEdificioInstanciado;
 
     public PhysicsDirectSpaceState espacio;
     public Dictionary intercepto;
@@ -144,14 +144,30 @@ public class InterfaceObjetos : Control
         destino = origen + camaraActual.ProjectRayNormal(GetGlobalMousePosition()) * RayoDistancia;//rayo lanzado desde la camara y el mouse
         espacio =  camaraActual.GetWorld().DirectSpaceState;
         intercepto = espacio.IntersectRay(origen,destino,new Godot.Collections.Array{}, 1);//esto es una variable global para saber la posición del mouse
-        
-        
+        //GD.Print(intercepto["position"]);
+        //esto es para mover los cubos instanciados
         if(intercepto.Contains("position"))//si el diccionario tiene esa clave
         {
-            edificioInstanciado.Translation = (Vector3)intercepto["position"];//guardo la posición del mouse
-            //GD.Print(intercepto["position"]);//imprimo por pantalla la ubicación del mouse donde intercepto dependiendo la Cámara
+            posicionEdificioInstanciado = (Vector3)intercepto["position"];//guardo la posición desde el arreglo donde esta la posición del rayo
+            posicionEdificioInstanciado = new Vector3( //conviero la posición a número entero
+                Mathf.Floor(posicionEdificioInstanciado.x),
+                Mathf.Floor(posicionEdificioInstanciado.y),
+                Mathf.Floor(posicionEdificioInstanciado.z)
+                );
+            //GetViewport().WarpMouse(new Vector2(0,0));
+            //edificioInstanciado.Translation = (Vector3)intercepto["position"];//guardo la posición del mouse
+            edificioInstanciado.Translation = posicionEdificioInstanciado;//guardo la posición del mouse
+
+
+            GD.Print(posicionEdificioInstanciado);//imprimo por pantalla la ubicación del mouse donde intercepto dependiendo la Cámara
         }    
+        /*GetViewport().WarpMouse(new Vector2(
+                posicionEdificioInstanciado.x + 1,
+                posicionEdificioInstanciado.z + 1)
+                );*/
     }
+            
+
 
     public void MenuInvisible()
     {
@@ -181,6 +197,7 @@ public class InterfaceObjetos : Control
             )
         );
     }
+
         
 }
         

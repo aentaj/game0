@@ -31,7 +31,7 @@ public class resourcesHBoxContainer : HBoxContainer
 //  {
 //      
 //  }
-
+    
     private void _on_TimerEnergy_timeout()//Este timer es para aumentar la energía..cuando termino el tiempo en el NodoTimer de energía
     {
         ScoreEnergy.Text = (Convert.ToInt16(ScoreEnergy.Text) + energiaDePaneles).ToString();//aumento la cantidad de energía dependiendo la cantidad de paneles solares el 3 significa que cada panel puede alimentar 3 ciudades
