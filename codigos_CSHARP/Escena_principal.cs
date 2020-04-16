@@ -27,6 +27,8 @@ public class Escena_principal : Spatial
     public int camara_elegida = 0;
     private MenuCasas menu;//accedo al nodo menu
 
+    private int pruebaVueltas = 0;
+
     //public static var script_global_cSharp = (script_global_cSharp)GetNode("/root/script_global_cSharp");
 
 
@@ -90,7 +92,7 @@ public class Escena_principal : Spatial
                         (z * tileXoffset) - ancho + 1// posición en Z
                     );
                 }
-
+                GD.Print(pruebaVueltas);
             }
         }
     }
