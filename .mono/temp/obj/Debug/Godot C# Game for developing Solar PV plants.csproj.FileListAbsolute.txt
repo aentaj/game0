@@ -1,0 +1,5 @@
+/home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Godot C# Game for developing Solar PV plants/.mono/temp/bin/Debug/Godot C# Game for developing Solar PV plants.dll
+/home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Godot C# Game for developing Solar PV plants/.mono/temp/bin/Debug/Godot C# Game for developing Solar PV plants.pdb
+/home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Godot C# Game for developing Solar PV plants/.mono/temp/obj/Debug/Godot C# Game for developing Solar PV plants.csprojAssemblyReference.cache
+/home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Godot C# Game for developing Solar PV plants/.mono/temp/obj/Debug/Godot C# Game for developing Solar PV plants.dll
+/home/ariel/Documentos/Godot engine proyectos/GODOT C# PROYECTOS/Godot C# Game for developing Solar PV plants/.mono/temp/obj/Debug/Godot C# Game for developing Solar PV plants.pdb

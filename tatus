@@ -1,0 +1,116 @@
+[33mcommit 58930a45278ee520de70385dfa76dfb7a879ace2[m[33m ([m[1;36mHEAD -> [m[1;32minterface[m[33m, [m[1;31morigin/interface[m[33m)[m
+Author: kone9 <arielgimenez_95@hotmail.com>
+Date:   Sat Apr 4 18:03:19 2020 -0300
+
+    probando git ignore
+
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mindex 42061c0..f33190c 100644[m
+[1m--- a/.gitignore[m
+[1m+++ b/.gitignore[m
+[36m@@ -1 +1,2 @@[m
+[31m-README.md[m
+\ No newline at end of file[m
+[32m+[m[32mREADME.md[m
+[32m+[m[32mpruebaOmision.txt[m
+[1mdiff --git a/.mono/metadata/scripts_metadata.editor b/.mono/metadata/scripts_metadata.editor[m
+[1mindex cbd27a3..cd1f175 100644[m
+[1m--- a/.mono/metadata/scripts_metadata.editor[m
+[1m+++ b/.mono/metadata/scripts_metadata.editor[m
+[36m@@ -1 +1 @@[m
+[31m-{"res://codigos_CSHARP/Escena_principal.cs":{"modified_time":"1585239260","class":{"namespace":"","class_name":"Escena_principal","nested":false}},"res://codigos_CSHARP/InterfaceObjetos.cs":{"modified_time":"1585240251","class":{"namespace":"","class_name":"InterfaceObjetos","nested":false}},"res://codigos_CSHARP/MenuCasas.cs":{"modified_time":"1585240258","class":{"namespace":"","class_name":"MenuCasas","nested":false}},"res://codigos_CSHARP/MenuFabricas.cs":{"modified_time":"1585240306","class":{"namespace":"","class_name":"MenuFabricas","nested":false}},"res://codigos_CSHARP/script_global_cSharp.cs":{"modified_time":"1580588743","class":{"namespace":"","class_name":"script_global_cSharp","nested":false}},"res://codigos_CSHARP/mosaico.cs":{"modified_time":"1582986250","class":{"namespace":"","class_name":"mosaico","nested":false}}}[m
+\ No newline at end of file[m
+[32m+[m[32m{"res://codigos_CSHARP/Escena_principal.cs":{"modified_time":"1585239260","class":{"namespace":"","class_name":"Escena_principal","nested":false}},"res://codigos_CSHARP/InterfaceObjetos.cs":{"modified_time":"1585586625","class":{"namespace":"","class_name":"InterfaceObjetos","nested":false}},"res://codigos_CSHARP/MenuCasas.cs":{"modified_time":"1585240258","class":{"namespace":"","class_name":"MenuCasas","nested":false}},"res://codigos_CSHARP/MenuFabricas.cs":{"modified_time":"1585240306","class":{"namespace":"","class_name":"MenuFabricas","nested":false}},"res://codigos_CSHARP/script_global_cSharp.cs":{"modified_time":"1580588743","class":{"namespace":"","class_name":"script_global_cSharp","nested":false}},"res://codigos_CSHARP/mosaico.cs":{"modified_time":"1582986250","class":{"namespace":"","class_name":"mosaico","nested":false}}}[m
+\ No newline at end of file[m
+[1mdiff --git a/.mono/metadata/scripts_metadata.editor_player b/.mono/metadata/scripts_metadata.editor_player[m
+[1mindex cbd27a3..cd1f175 100644[m
+[1m--- a/.mono/metadata/scripts_metadata.editor_player[m
+[1m+++ b/.mono/metadata/scripts_metadata.editor_player[m
+[36m@@ -1 +1 @@[m
+[31m-{"res://codigos_CSHARP/Escena_principal.cs":{"modified_time":"1585239260","class":{"namespace":"","class_name":"Escena_principal","nested":false}},"res://codigos_CSHARP/InterfaceObjetos.cs":{"modified_time":"1585240251","class":{"namespace":"","class_name":"InterfaceObjetos","nested":false}},"res://codigos_CSHARP/MenuCasas.cs":{"modified_time":"1585240258","class":{"namespace":"","class_name":"MenuCasas","nested":false}},"res://codigos_CSHARP/MenuFabricas.cs":{"modified_time":"1585240306","class":{"namespace":"","class_name":"MenuFabricas","nested":false}},"res://codigos_CSHARP/script_global_cSharp.cs":{"modified_time":"1580588743","class":{"namespace":"","class_name":"script_global_cSharp","nested":false}},"res://codigos_CSHARP/mosaico.cs":{"modified_time":"1582986250","class":{"namespace":"","class_name":"mosaico","nested":false}}}[m
+\ No newline at end of file[m
+[32m+[m[32m{"res://codigos_CSHARP/Escena_principal.cs":{"modified_time":"1585239260","class":{"namespace":"","class_name":"Escena_principal","nested":false}},"res://codigos_CSHARP/InterfaceObjetos.cs":{"modified_time":"1585586625","class":{"namespace":"","class_name":"InterfaceObjetos","nested":false}},"res://codigos_CSHARP/MenuCasas.cs":{"modified_time":"1585240258","class":{"namespace":"","class_name":"MenuCasas","nested":false}},"res://codigos_CSHARP/MenuFabricas.cs":{"modified_time":"1585240306","class":{"namespace":"","class_name":"MenuFabricas","nested":false}},"res://codigos_CSHARP/script_global_cSharp.cs":{"modified_time":"1580588743","class":{"namespace":"","class_name":"script_global_cSharp","nested":false}},"res://codigos_CSHARP/mosaico.cs":{"modified_time":"1582986250","class":{"namespace":"","class_name":"mosaico","nested":false}}}[m
+\ No newline at end of file[m
+[1mdiff --git a/.mono/temp/bin/Tools/Godot C# Game for developing Solar PV plants.dll b/.mono/temp/bin/Tools/Godot C# Game for developing Solar PV plants.dll[m
+[1mindex 62da3c8..a1747d6 100644[m
+Binary files a/.mono/temp/bin/Tools/Godot C# Game for developing Solar PV plants.dll and b/.mono/temp/bin/Tools/Godot C# Game for developing Solar PV plants.dll differ
+[1mdiff --git a/.mono/temp/bin/Tools/Godot C# Game for developing Solar PV plants.pdb b/.mono/temp/bin/Tools/Godot C# Game for developing Solar PV plants.pdb[m
+[1mindex cf2ee4d..6b474a4 100644[m
+Binary files a/.mono/temp/bin/Tools/Godot C# Game for developing Solar PV plants.pdb and b/.mono/temp/bin/Tools/Godot C# Game for developing Solar PV plants.pdb differ
+[1mdiff --git a/.mono/temp/obj/Tools/Godot C# Game for developing Solar PV plants.dll b/.mono/temp/obj/Tools/Godot C# Game for developing Solar PV plants.dll[m
+[1mindex 62da3c8..a1747d6 100644[m
+Binary files a/.mono/temp/obj/Tools/Godot C# Game for developing Solar PV plants.dll and b/.mono/temp/obj/Tools/Godot C# Game for developing Solar PV plants.dll differ
+[1mdiff --git a/.mono/temp/obj/Tools/Godot C# Game for developing Solar PV plants.pdb b/.mono/temp/obj/Tools/Godot C# Game for developing Solar PV plants.pdb[m
+[1mindex cf2ee4d..6b474a4 100644[m
+Binary files a/.mono/temp/obj/Tools/Godot C# Game for developing Solar PV plants.pdb and b/.mono/temp/obj/Tools/Godot C# Game for developing Solar PV plants.pdb differ
+[1mdiff --git a/codigos_CSHARP/InterfaceObjetos.cs b/codigos_CSHARP/InterfaceObjetos.cs[m
+[1mindex 6ee9a70..57374ab 100644[m
+[1m--- a/codigos_CSHARP/InterfaceObjetos.cs[m
+[1m+++ b/codigos_CSHARP/InterfaceObjetos.cs[m
+[36m@@ -144,7 +144,7 @@[m [mpublic class InterfaceObjetos : Control[m
+         if(intercepto.Contains("position"))//si el diccionario tiene esa clave[m
+         {[m
+             edificioInstanciado.Translation = (Vector3)intercepto["position"];//guardo la posición del mouse[m
+[31m-            GD.Print(intercepto["position"]);//imprimo por pantalla la ubicación del mouse donde intercepto dependiendo la Cámara[m
+[32m+[m[32m            //GD.Print(intercepto["position"]);//imprimo por pantalla la ubicación del mouse donde intercepto dependiendo la Cámara[m
+         }    [m
+     }[m
+         [m
+[1mdiff --git a/codigos_CSHARP/MenuCasas.cs b/codigos_CSHARP/MenuCasas.cs[m
+[1mindex ef3529e..f0a2aca 100644[m
+[1m--- a/codigos_CSHARP/MenuCasas.cs[m
+[1m+++ b/codigos_CSHARP/MenuCasas.cs[m
+[36m@@ -54,21 +54,21 @@[m [mpublic class MenuCasas : InterfaceObjetos[m
+ [m
+     private void _on_Button2_button_down()[m
+     {  [m
+[31m-        GD.Print("presione el primer boton");[m
+[32m+[m[32m        //GD.Print("presione el primer boton");[m
+         instanciarEdificio(0);//si presiono este boton instancio la casa que esta en el indice 0[m
+     }[m
+ [m
+ [m
+     private void _on_Button3_button_down()[m
+     {  [m
+[31m-        GD.Print("presione segundo boton");[m
+[32m+[m[32m        //GD.Print("presione segundo boton");[m
+         instanciarEdificio(1);//si presiono este boton instancio la casa que esta en el indice 0[m
+     }[m
+ [m
+ [m
+     private void _on_Button4_button_down()[m
+     {  [m
+[31m-        GD.Print("presione el tercer boton");[m
+[32m+[m[32m        //GD.Print("presione el tercer boton");[m
+         instanciarEdificio(2);//si presiono este boton instancio la casa que esta en el indice 0[m
+     }[m
+ [m
+[1mdiff --git a/codigos_CSHARP/MenuFabricas.cs b/codigos_CSHARP/MenuFabricas.cs[m
+[1mindex 8c68146..9f68f99 100644[m
+[1m--- a/codigos_CSHARP/MenuFabricas.cs[m
+[1m+++ b/codigos_CSHARP/MenuFabricas.cs[m
+[36m@@ -52,21 +52,21 @@[m [mpublic class MenuFabricas : InterfaceObjetos[m
+ [m
+     private void _on_Button2_button_down()[m
+     {  [m
+[31m-        GD.Print("presione el primer boton");[m
+[32m+[m[32m        //GD.Print("presione el primer boton");[m
+         instanciarEdificio(0);//si presiono este boton instancio la casa que esta en el indice 0[m
+     }[m
+ [m
+ [m
+     private void _on_Button3_button_down()[m
+     {  [m
+[31m-        GD.Print("presione segundo boton");[m
+[32m+[m[32m        //GD.Print("presione segundo boton");[m
+         instanciarEdificio(1);//si presiono este boton instancio la casa que esta en el indice 0[m
+     }[m
+ [m
+ [m
+     private void _on_Button4_button_down()[m
+     {  [m
+[31m-        GD.Print("presione el tercer boton");[m
+[32m+[m[32m        //GD.Print("presione el tercer boton");[m
+         instanciarEdificio(2);//si presiono este boton instancio la casa que esta en el indice 0[m
+     }[m
+         [m

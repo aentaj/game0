@@ -564,6 +564,26 @@
             <para>This is for editors that edit script-based objects. You can return a list of breakpoints in the format (<c>script:line</c>), for example: <c>res://path_to_script.gd:25</c>.</para>
             </summary>
         </member>
+        <member name="M:Godot.EditorPlugin.GetPluginIcon">
+            <summary>
+            <para>Override this method in your plugin to return a <see cref="T:Godot.Texture"/> in order to give it an icon.</para>
+            <para>For main screen plugins, this appears at the top of the screen, to the right of the "2D", "3D", "Script", and "AssetLib" buttons.</para>
+            <para>Ideally, the plugin icon should be white with a transparent background and 16x16 pixels in size.</para>
+            <para><code>
+            func get_plugin_icon():
+                # You can use a custom icon:
+                return preload("res://addons/my_plugin/my_plugin_icon.svg")
+                # Or use a built-in icon:
+                return get_editor_interface().get_base_control().get_icon("Node", "EditorIcons")
+            </code></para>
+            </summary>
+        </member>
+        <member name="M:Godot.EditorPlugin.GetPluginName">
+            <summary>
+            <para>Override this method in your plugin to provide the name of the plugin when displayed in the Godot editor.</para>
+            <para>For main screen plugins, this appears at the top of the screen, to the right of the "2D", "3D", "Script", and "AssetLib" buttons.</para>
+            </summary>
+        </member>
         <member name="M:Godot.EditorPlugin.GetState">
             <summary>
             <para>Gets the state of your plugin editor. This is used when saving the scene (so state is kept when opening it again) and for switching tabs (so state can be restored when the tab returns).</para>

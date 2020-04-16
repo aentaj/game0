@@ -22,14 +22,15 @@ public class Escena_principal : Spatial
     private Camera Camera_superior;
     private Camera Camera_vista_media;
     private Camera Camera_aguila;
-
     private Spatial mosaico;
-
     Vector2 rotar = new Vector2();
     public int camara_elegida = 0;
+    private MenuCasas menu;//accedo al nodo menu
 
+    private int pruebaVueltas = 0;
 
     //public static var script_global_cSharp = (script_global_cSharp)GetNode("/root/script_global_cSharp");
+
 
     public override void _Ready()
     {
@@ -46,9 +47,10 @@ public class Escena_principal : Spatial
         Camera_superior = (Camera)GetTree().GetNodesInGroup("Camera_superior")[0];
         Camera_vista_media = (Camera)GetTree().GetNodesInGroup("Camera_vista_media")[0];
         Camera_aguila = (Camera)GetTree().GetNodesInGroup("Camera_aguila")[0];
-        
         forma1();
+        //menu = (MenuCasas)GetTree().GetNodesInGroup("menu")[0];//busca la casa para saber que camara esta activa
     }
+
 
     //  // Called every frame. 'delta' is the elapsed time since the previous frame.
     //  public override void _Process(float delta)
@@ -84,21 +86,16 @@ public class Escena_principal : Spatial
                     mosaico = (Spatial)Masaicos[0].Instance();//instancio la escena empaquetada mosaicos
                     mosaicos.AddChild(mosaico);//agrego el nodo a la escena
                                                //cambia la posicion de los mosaicos
-                    mosaico.Translation = new Vector3
-                    (
+                    mosaico.Translation = new Vector3(
                         (x * tileXoffset) - largo + 1,//posición en X
-
-                        //(float)Godot.GD.RandRange(0,1),//posición en Y convierto randRange en float
                         0,
-
                         (z * tileXoffset) - ancho + 1// posición en Z
                     );
                 }
-
+                GD.Print(pruebaVueltas);
             }
         }
     }
-
 
 
     private void cambiarCamara()
@@ -115,18 +112,21 @@ public class Escena_principal : Spatial
             switch (camara_elegida)
             {
                 case 0:
+                    //menu.CamaraActiva = "Camera_aguila";//variable global que receibo de interface
                     Camera_aguila.Current = true;
                     Camera_superior.Current = false;
                     Camera_vista_media.Current = false;
                     return;
 
                 case 1:
+                    //menu.CamaraActiva = "Camera_superior";//variable global que receibo de interface
                     Camera_aguila.Current = false;
                     Camera_superior.Current = true;
                     Camera_vista_media.Current = false;
                     return;
 
                 case 2:
+                    //menu.CamaraActiva = "Camera_vista_media";//variable global que receibo de interface
                     Camera_aguila.Current = false;
                     Camera_superior.Current = false;
                     Camera_vista_media.Current = true;
@@ -136,7 +136,6 @@ public class Escena_principal : Spatial
 
         }
     }
-
 
     //eventos relacionados al mouse
     public override void _Input(InputEvent @event)
